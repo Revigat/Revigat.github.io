@@ -74,12 +74,12 @@ section{position:relative;z-index:1;padding:120px 0}
 .av-ring2{position:absolute;inset:14px;border-radius:50%;border:1.5px dashed rgba(34,211,238,.45);animation:spin 26s linear infinite reverse}
 .av-ring3{position:absolute;inset:2px;border-radius:50%;border:1px solid rgba(59,130,246,.18);box-shadow:0 0 40px rgba(59,130,246,.18),inset 0 0 30px rgba(34,211,238,.08)}
 .av-photo{position:absolute;inset:34px;border-radius:50%;overflow:hidden;background:#0b1533;box-shadow:0 0 0 2px rgba(34,211,238,.55),0 0 28px rgba(34,211,238,.35),0 0 60px rgba(59,130,246,.25)}
-.av-photo img{width:100%;height:100%;object-fit:cover;display:block;transform:scale(1.03);filter:grayscale(1) contrast(1.05);transition:filter .5s,transform .6s}
+.av-photo img,.av-photo video{width:100%;height:100%;object-fit:cover;border-radius:50%;display:block;transform:scale(1.03);filter:grayscale(1) contrast(1.05);transition:filter .5s,transform .6s}
 .av-photo::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(160deg,rgba(59,130,246,.35),rgba(34,211,238,.25));mix-blend-mode:color;opacity:0;transition:opacity .5s}
 .av-photo::after{content:"";position:absolute;inset:0;z-index:2;background:repeating-linear-gradient(0deg,rgba(34,211,238,.12) 0 1px,transparent 1px 3px),linear-gradient(180deg,transparent 0 45%,rgba(165,243,252,.35) 50%,transparent 55% 100%);background-size:100% 100%,100% 220%;opacity:0;transition:opacity .5s}
 .avatar:hover .av-photo::before{opacity:1}
 .avatar:hover .av-photo::after{opacity:1;animation:scanY 1.8s linear infinite}
-.avatar:hover .av-photo img{transform:scale(1.07)}
+.avatar:hover .av-photo img,.avatar:hover .av-photo video{transform:scale(1.07)}
 @keyframes scanY{0%{background-position:0 0,0 120%}100%{background-position:0 0,0 -120%}}
 .hero .title{font-family:var(--fh);font-size:clamp(17px,1.7vw,21px);color:var(--text);opacity:.92;max-width:640px}
 .typing{font-family:var(--fm);font-size:clamp(14px,1.35vw,16px);color:var(--muted);margin-top:18px;min-height:1.6em}
@@ -423,7 +423,7 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
           <div class="av-ring3" aria-hidden="true"></div>
           <div class="av-ring2" aria-hidden="true"></div>
           <div class="av-ring" aria-hidden="true"></div>
-          <div class="av-photo"><img src="assets/filippe.webp" alt="Foto de Filippe Revigat" width="480" height="480" decoding="async"></div>
+          <div class="av-photo"><video id="avVideo" muted loop playsinline preload="auto" poster="assets/filippe.webp" width="480" height="480" aria-label="Vídeo de Filippe Revigat"><source src="assets/filippe.webm" type="video/webm"><source src="assets/filippe.mp4" type="video/mp4"><img src="assets/filippe.webp" alt="Foto de Filippe Revigat" width="480" height="480"></video></div>
         </div>
       </div>
       <p class="title">Especialista em Marketing Digital, Growth &amp; Performance | IA aplicada a Negócios</p>
@@ -813,6 +813,14 @@ const hero=document.getElementById('hero');
 hero.addEventListener('pointermove',e=>{const r=cv.getBoundingClientRect();mouse.x=e.clientX-r.left;mouse.y=e.clientY-r.top});
 hero.addEventListener('pointerleave',()=>{mouse.x=mouse.y=-9999});
 resize();if(!RM)loop();
+
+/* AVATAR VIDEO */
+(function(){const v=document.getElementById('avVideo');if(!v)return;v.muted=true;
+  if(RM){v.removeAttribute('autoplay');v.pause();return}
+  const play=()=>{const p=v.play();if(p&&p.catch)p.catch(()=>{})};
+  new IntersectionObserver(e=>{e[0].isIntersecting?play():v.pause()}).observe(v);
+  document.addEventListener('visibilitychange',()=>{document.hidden?v.pause():play()});
+})();
 
 /* AVATAR MATRIX */
 (function(){const c=document.getElementById('avMatrix');if(!c)return;const x=c.getContext('2d');
