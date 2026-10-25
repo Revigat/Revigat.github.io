@@ -125,6 +125,18 @@ section{position:relative;z-index:1;padding:120px 0}
 .stat{padding:30px 28px;overflow:hidden}
 .stat .num{font-family:var(--fh);font-weight:700;font-size:clamp(44px,5vw,62px);line-height:1;letter-spacing:-.03em}
 .stat .lbl{color:var(--muted);margin-top:10px;font-size:15px}
+.stat-hero{display:grid;grid-template-columns:auto 1fr;gap:28px 48px;align-items:center;padding:36px 40px;margin-bottom:20px;
+  background:linear-gradient(120deg,rgba(15,30,66,.85),rgba(10,20,44,.75) 55%,rgba(40,28,10,.35));border-color:rgba(34,211,238,.3);
+  box-shadow:0 0 0 1px rgba(34,211,238,.06),0 0 50px rgba(59,130,246,.12)}
+.stat-hero::before{content:"";position:absolute;inset:0;border-radius:inherit;padding:1px;background:linear-gradient(110deg,rgba(59,130,246,.7),rgba(34,211,238,.5) 45%,transparent 70%,rgba(251,191,36,.6));-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;pointer-events:none}
+.sh-tag{display:inline-flex;align-items:center;gap:8px;font-family:var(--fm);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--cyan);margin-bottom:12px}
+.stat .sh-num{font-size:clamp(56px,7.2vw,96px);white-space:nowrap;background:linear-gradient(100deg,#3b82f6 0%,#22d3ee 50%,#5eead4 72%,#fbbf24 100%);-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 0 22px rgba(34,211,238,.25))}
+.sh-pre,.sh-suf{font-size:.55em;letter-spacing:-.01em}
+.stat .sh-lbl{font-size:18px;color:#c8d4ea;margin-top:0;max-width:520px}
+.sh-chips{margin-top:16px}
+.sh-wave{position:absolute;right:0;bottom:0;width:60%;height:70%;opacity:.35;pointer-events:none;stroke-dasharray:800;stroke-dashoffset:800;transition:stroke-dashoffset 2.4s cubic-bezier(.2,.7,.2,1) .4s}
+.stat-hero.in .sh-wave{stroke-dashoffset:0}
+.sh-left,.sh-right{position:relative;z-index:1}
 .stat .ico{position:absolute;right:22px;top:22px;width:40px;height:40px;border-radius:12px;display:grid;place-items:center;border:1px solid var(--line2);color:var(--cyan);background:rgba(34,211,238,.06)}
 .stat .ico svg{width:20px;height:20px}
 .stat::after{content:"";position:absolute;left:0;bottom:0;height:2px;width:100%;background:var(--grad);transform:scaleX(0);transform-origin:left;transition:transform 1.4s cubic-bezier(.2,.7,.2,1) .3s}
@@ -143,21 +155,25 @@ section{position:relative;z-index:1;padding:120px 0}
 .bar-row .val{font-family:var(--fm);color:var(--cyan);font-size:13px;text-align:right}
 .bar-row.total{margin:4px 0 22px;padding-bottom:18px;border-bottom:1px dashed var(--line2)}
 .bar-row.total .nm{color:#fff;font-family:var(--fh);font-weight:600;font-size:15px}
-.bar-row.total .nm small{color:#fcd9a8;font-family:var(--fb);font-weight:400}
+.bar-row.total .nm small{color:#9be7f5;font-family:var(--fb);font-weight:400}
 .bar-row.total .bar-track{height:18px;overflow:visible;background:rgba(120,170,255,.1);box-shadow:inset 0 0 0 1px rgba(120,170,255,.12)}
-.bar-row.total .bar-fill{position:relative;background:linear-gradient(90deg,#3b82f6 0%,#22d3ee 45%,#5eead4 62%,#fbbf24 84%,#f97316 96%,#fff1c2 100%);box-shadow:0 0 18px rgba(34,211,238,.45),0 0 26px rgba(249,115,22,.35);transition:width 2s cubic-bezier(.2,.7,.2,1)}
-.bar-row.total .val{color:#fbbf24;font-weight:500;font-size:13.5px;white-space:nowrap;text-shadow:0 0 12px rgba(251,191,36,.5)}
-.spark{position:absolute;right:0;top:50%;width:0;height:0;opacity:0;transition:opacity .5s;pointer-events:none}
+.bar-row.total .bar-fill{position:relative;background:linear-gradient(90deg,#2f6bff 0%,#3b82f6 25%,#22d3ee 60%,#a5f3fc 88%,#ffffff 100%);box-shadow:0 0 18px rgba(34,211,238,.5),0 0 30px rgba(165,243,252,.25);transition:width 2s cubic-bezier(.2,.7,.2,1)}
+.bar-row.total .val{color:#a5f3fc;font-weight:500;font-size:13.5px;white-space:nowrap;text-shadow:0 0 12px rgba(34,211,238,.7),0 0 2px rgba(255,255,255,.6)}
+.spark{position:absolute;right:0;top:50%;width:0;height:0;opacity:0;transition:opacity .6s;pointer-events:none}
 .spark.lit{opacity:1}
-.spark .glow{position:absolute;left:-30px;top:-30px;width:60px;height:60px;border-radius:50%;background:radial-gradient(circle,rgba(253,186,116,.55),rgba(249,115,22,.22) 45%,transparent 70%);animation:fglow 1.4s ease-in-out infinite alternate}
-.spark .flame{position:absolute;left:-9px;top:-20px;width:18px;height:26px;border-radius:50% 50% 45% 45%/60% 60% 40% 40%;background:radial-gradient(ellipse at 50% 75%,#fff7d6 0%,#fde047 30%,#f97316 65%,transparent 75%);filter:blur(1px);transform-origin:50% 90%;animation:flick .18s steps(2) infinite alternate,sway 1.1s ease-in-out infinite alternate}
-.spark .core{position:absolute;left:-6px;top:-6px;width:12px;height:12px;border-radius:50%;background:#fffbe8;box-shadow:0 0 8px #fff,0 0 16px #fde047,0 0 28px #f97316,0 0 40px rgba(34,211,238,.6);animation:ember .9s ease-in-out infinite alternate}
-.spark i{position:absolute;left:-2.5px;top:-2.5px;width:5px;height:5px;border-radius:50%;background:#fde68a;box-shadow:0 0 6px #fbbf24,0 0 10px #f97316;opacity:0;animation:fly var(--d,1.2s) ease-out infinite;animation-delay:var(--dl,0s)}
-@keyframes fly{0%{opacity:1;transform:translate(0,0) scale(1)}70%{opacity:.8}100%{opacity:0;transform:translate(var(--x),var(--y)) scale(.2)}}
-@keyframes flick{0%{transform:scaleY(1) scaleX(1)}100%{transform:scaleY(1.18) scaleX(.9)}}
-@keyframes sway{0%{rotate:-8deg}100%{rotate:10deg}}
-@keyframes ember{0%{transform:scale(.85);filter:brightness(1)}100%{transform:scale(1.15);filter:brightness(1.3)}}
-@keyframes fglow{0%{transform:scale(.85);opacity:.75}100%{transform:scale(1.15);opacity:1}}
+.spark .halo{position:absolute;left:-32px;top:-32px;width:64px;height:64px;border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,.55),rgba(165,243,252,.28) 35%,rgba(34,211,238,.1) 55%,transparent 70%);animation:halo 2.2s ease-in-out infinite alternate}
+.spark .tail{position:absolute;right:0;top:-4px;width:150px;height:8px;border-radius:8px;background:linear-gradient(90deg,transparent,rgba(165,243,252,.25) 45%,rgba(224,251,255,.75) 85%,#fff);filter:blur(2px);transform-origin:right center;animation:tail 2.2s ease-in-out infinite alternate}
+.spark .tail2{position:absolute;right:0;top:-1px;width:90px;height:2px;background:linear-gradient(90deg,transparent,#fff);box-shadow:0 0 6px #a5f3fc;animation:tail 1.6s ease-in-out infinite alternate}
+.spark .starw{position:absolute;left:-15px;top:-15px;width:30px;height:30px;filter:drop-shadow(0 0 4px #fff) drop-shadow(0 0 10px #67e8f9) drop-shadow(0 0 18px rgba(59,130,246,.8))}
+.spark .star{display:block;width:100%;height:100%;background:radial-gradient(circle,#fff 30%,#e0fbff 60%,#a5f3fc);clip-path:polygon(50% 0,58% 42%,100% 50%,58% 58%,50% 100%,42% 58%,0 50%,42% 42%);animation:twinkle 1.8s ease-in-out infinite}
+.spark .star.s2{position:absolute;inset:6px;width:auto;height:auto;transform:rotate(45deg);opacity:.7;animation:twinkle2 1.8s ease-in-out infinite}
+.spark .core{position:absolute;left:-3.5px;top:-3.5px;width:7px;height:7px;border-radius:50%;background:#fff;box-shadow:0 0 6px #fff,0 0 14px #a5f3fc}
+.spark i{position:absolute;left:-1.5px;top:-1.5px;width:3px;height:3px;border-radius:50%;background:#fff;box-shadow:0 0 5px #a5f3fc,0 0 9px rgba(34,211,238,.8);opacity:0;animation:dust var(--d,1.6s) ease-out infinite;animation-delay:var(--dl,0s)}
+@keyframes dust{0%{opacity:0;transform:translate(0,0) scale(1)}15%{opacity:1}100%{opacity:0;transform:translate(var(--x),var(--y)) scale(.3)}}
+@keyframes twinkle{0%,100%{transform:scale(.8) rotate(0deg)}50%{transform:scale(1.15) rotate(20deg)}}
+@keyframes twinkle2{0%,100%{transform:rotate(45deg) scale(1);opacity:.75}50%{transform:rotate(65deg) scale(.6);opacity:.35}}
+@keyframes tail{0%{transform:scaleX(.85);opacity:.8}100%{transform:scaleX(1.05);opacity:1}}
+@keyframes halo{0%{transform:scale(.85);opacity:.75}100%{transform:scale(1.15);opacity:1}}
 .note{font-size:12px;color:var(--dim);margin-top:14px;font-family:var(--fm)}
 .funnel-stage{transition:opacity .8s,transform .8s}
 .kpis{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
@@ -292,6 +308,9 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
   .stat{padding:22px 18px}
   .stat .ico{display:none}
   .stat .lbl{font-size:13.5px}
+  .stat-hero{grid-template-columns:1fr;padding:26px 22px;gap:14px}
+  .stat .sh-lbl{font-size:15.5px}
+  .sh-wave{width:100%;height:45%}
   .ai-row{grid-template-columns:1fr}
   .diagram .dg-desk{display:none}
   .diagram .dg-mobile{display:block}
@@ -321,8 +340,8 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
   .marquee-track{animation:none}
   .tl-detail li{opacity:1;transform:none}
   .spark i{display:none}
-  .spark .flame{animation:none;transform:none}
-  .spark .glow,.spark .core{animation:none;transform:none}
+  .spark .halo,.spark .tail,.spark .tail2,.spark .star{animation:none!important;transform:none}
+  .spark .star.s2{transform:rotate(45deg)}
 }
 </style>
 </head>
@@ -405,7 +424,7 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
         <p>Integro tecnologia, dados e marketing para impulsionar <strong>growth, aquisição e geração de leads</strong>, com gestão de mídia paga, otimização de funil de conversão e CRO, e acompanhamento de CAC, ROAS e ROI por meio de analytics e BI.</p>
         <p>Sou <strong>líder técnico em projetos de IA aplicada a negócios</strong>: assistentes inteligentes, agentes de IA, automação de atendimento e qualificação de leads, com governança, segurança e uso responsável de dados. Faço análise avançada de marketing orientada por <strong>arquétipos e teoria do aprendizado</strong> para criar conteúdo de alta conversão.</p>
         <div class="mini-label">Setores de atuação</div>
-        <div class="chips"><span class="chip">Saúde</span><span class="chip">Varejo</span><span class="chip">Eventos</span><span class="chip">Serviços</span></div>
+        <div class="chips"><span class="chip">Saúde</span><span class="chip">Varejo</span><span class="chip">Eventos</span><span class="chip">Serviços</span><span class="chip">Política</span></div>
         <div class="mini-label">Abordagem</div>
         <div class="chips"><span class="chip t">Data-driven</span><span class="chip t">Arquétipos de marca</span><span class="chip t">Teoria do aprendizado</span><span class="chip v">IA aplicada</span><span class="chip v">CRO e funis</span></div>
       </div>
@@ -436,12 +455,23 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
       <h2>Resultados em <span class="grad-text">dados reais.</span></h2>
       <p>Somente números da trajetória profissional ou derivados diretamente dela.</p>
     </div>
+    <div class="card stat stat-hero reveal">
+      <div class="sh-left">
+        <div class="sh-tag"><span class="dot"></span>investimento em mídia paga</div>
+        <div class="num sh-num"><span class="sh-pre">R$</span> <span class="count" data-to="50">0</span><span class="sh-suf"> mi+</span></div>
+      </div>
+      <div class="sh-right">
+        <div class="lbl sh-lbl">investidos em mídia paga nos setores de atuação, com gestão orientada a CAC, ROAS e ROI.</div>
+        <div class="chips sh-chips"><span class="chip">Saúde</span><span class="chip">Varejo</span><span class="chip">Eventos</span><span class="chip">Serviços</span><span class="chip">Política</span></div>
+      </div>
+      <svg class="sh-wave" viewBox="0 0 600 120" preserveAspectRatio="none" aria-hidden="true"><path d="M0 90 C 80 80, 120 60, 200 62 S 330 40, 400 34 S 520 14, 600 8" fill="none" stroke="url(#shg)" stroke-width="2"/><defs><linearGradient id="shg" x1="0" x2="1"><stop offset="0" stop-color="#3b82f6" stop-opacity="0"/><stop offset=".6" stop-color="#22d3ee"/><stop offset="1" stop-color="#fbbf24"/></linearGradient></defs></svg>
+    </div>
     <div class="stats">
       <div class="card stat reveal"><div class="ico"><svg><use href="#i-clock"/></svg></div><div class="num grad-text"><span class="count" data-to="10">0</span>+</div><div class="lbl">anos em marketing digital e performance</div></div>
       <div class="card stat reveal d1"><div class="ico"><svg><use href="#i-chart"/></svg></div><div class="num grad-text"><span class="count" data-to="500">0</span>%+</div><div class="lbl">ROI somado apresentado nos projetos</div></div>
       <div class="card stat reveal d2"><div class="ico"><svg><use href="#i-bot"/></svg></div><div class="num grad-text"><span class="count" data-to="24">0</span>/7</div><div class="lbl">atendimento de leads com IA (Henrique)</div></div>
       <div class="card stat reveal"><div class="ico"><svg><use href="#i-build"/></svg></div><div class="num grad-text"><span class="count" data-to="4">0</span></div><div class="lbl">empresas na trajetória profissional</div></div>
-      <div class="card stat reveal d1"><div class="ico"><svg><use href="#i-grid"/></svg></div><div class="num grad-text"><span class="count" data-to="4">0</span></div><div class="lbl">setores: saúde, varejo, eventos e serviços</div></div>
+      <div class="card stat reveal d1"><div class="ico"><svg><use href="#i-grid"/></svg></div><div class="num grad-text"><span class="count" data-to="5">0</span></div><div class="lbl">setores: saúde, varejo, eventos, serviços e política</div></div>
       <div class="card stat reveal d2"><div class="ico"><svg><use href="#i-ads"/></svg></div><div class="num grad-text"><span class="count" data-to="4">0</span></div><div class="lbl">plataformas de mídia paga: Google, Meta, TikTok e ChatGPT Ads</div></div>
     </div>
     <div class="viz-grid">
@@ -790,8 +820,8 @@ jobs.forEach(j=>{j.a=mi(j.s);j.z=mi(j.e||NOW)+1;j.m=j.z-j.a});
 const maxM=Math.max(...jobs.map(j=>j.m));
 const monthSet=new Set();jobs.forEach(j=>{for(let k=j.a;k<j.z;k++)monthSet.add(k)});
 const totalM=monthSet.size;
-const sparks=[[22,-30,'1.1s','0s'],[34,-14,'1.3s','.25s'],[26,10,'1.0s','.5s'],[42,-36,'1.5s','.7s'],[16,-42,'1.2s','.9s'],[36,18,'1.4s','.15s'],[48,-22,'1.6s','.4s'],[12,-26,'.9s','1s'],[30,-48,'1.7s','.6s'],[52,-4,'1.3s','.85s'],[8,-34,'1.0s','.35s'],[44,8,'1.2s','1.1s']];
-const totalRow=`<div class="bar-row total"><div class="nm">Total de experiência<small>Trajetória completa, a todo vapor</small></div><div class="bar-track"><div class="bar-fill" data-w="94"><span class="spark" id="spark"><span class="glow"></span><span class="flame"></span>${sparks.map(s=>`<i style="--x:${s[0]}px;--y:${s[1]}px;--d:${s[2]};--dl:${s[3]}"></i>`).join('')}<span class="core"></span></span></div></div><div class="val">${totalM} meses</div></div>`;
+const sparks=[[-34,-7,'1.6s','0s'],[-52,5,'1.9s','.3s'],[-24,6,'1.4s','.6s'],[-68,-4,'2.1s','.9s'],[-44,-10,'1.7s','1.2s'],[-60,9,'2s','.45s'],[-30,-2,'1.5s','1.4s'],[-78,3,'2.3s','.75s']];
+const totalRow=`<div class="bar-row total"><div class="nm">Total de experiência<small>Trajetória completa, a todo vapor</small></div><div class="bar-track"><div class="bar-fill" data-w="94"><span class="spark" id="spark"><span class="tail"></span><span class="tail2"></span><span class="halo"></span>${sparks.map(s=>`<i style="--x:${s[0]}px;--y:${s[1]}px;--d:${s[2]};--dl:${s[3]}"></i>`).join('')}<span class="starw"><span class="star"></span><span class="star s2"></span></span><span class="core"></span></span></div></div><div class="val">${totalM} meses</div></div>`;
 document.getElementById('bars').innerHTML=totalRow+jobs.map((j,i)=>`<div class="bar-row"><div class="nm">${j.co}<small>${j.role}${j.type?' ('+j.type+')':''}</small></div><div class="bar-track"><div class="bar-fill${j.co.includes('Med4U')?' v':''}" data-w="${(j.m/totalM*94).toFixed(1)}"></div></div><div class="val">${j.m} meses</div></div>`).join('');
 
 /* FUNNEL */
