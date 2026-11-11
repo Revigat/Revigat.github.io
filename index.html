@@ -307,8 +307,21 @@ section{position:relative;z-index:1;padding:120px 0}
 .contact-links a,.contact-links span{display:inline-flex;align-items:center;gap:8px}
 .contact-links a:hover{color:var(--cyan)}
 .contact-links svg{width:17px;height:17px;color:var(--cyan)}
+#produto{padding:80px 0}
+.produto{display:flex;align-items:center;justify-content:space-between;gap:28px 48px;padding:36px 40px;
+  background:linear-gradient(120deg,rgba(15,30,66,.85),rgba(10,20,44,.75) 55%,rgba(8,40,48,.42));border-color:rgba(34,211,238,.3);
+  box-shadow:0 0 0 1px rgba(34,211,238,.06),0 0 50px rgba(59,130,246,.12)}
+.produto::before{content:"";position:absolute;inset:0;border-radius:inherit;padding:1px;background:linear-gradient(110deg,rgba(59,130,246,.7),rgba(34,211,238,.5) 45%,transparent 72%);-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;pointer-events:none}
+.produto h2{font-family:var(--fh);font-size:clamp(28px,3.5vw,42px);line-height:1.08;letter-spacing:-.03em;font-weight:700}
+.produto p{color:#c8d4ea;margin-top:12px;font-size:17px}
+.produto p .grad-text{white-space:nowrap}
+.produto .btn{flex:none;position:relative;z-index:1}
 footer{position:relative;z-index:1;border-top:1px solid var(--line);padding:26px 0;color:var(--dim);font-size:13px}
 footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+@media (max-width:1120px) and (min-width:861px){
+  .nav-links{gap:14px;font-size:13px}
+  .nav-cta{padding:8px 12px;font-size:12px}
+}
 @media (max-width:1024px){
   .name-row{gap:32px}
   .hero-grid{grid-template-columns:1fr;gap:40px}
@@ -323,6 +336,8 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
 @media (max-width:860px){
   .nav-links,.nav-cta{display:none}
   .burger{display:block}
+  #produto{padding:56px 0}
+  .produto{flex-direction:column;align-items:flex-start;padding:28px 24px}
   .nav-links.open{display:flex;flex-direction:column;position:absolute;top:70px;left:0;right:0;background:rgba(5,9,20,.96);backdrop-filter:blur(14px);padding:20px 4vw 26px;border-bottom:1px solid var(--line);gap:18px;font-size:17px}
   .stats{grid-template-columns:1fr 1fr}
   .skills{grid-template-columns:1fr}
@@ -361,6 +376,9 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
 }
 @media (max-width:640px){
   section{padding:76px 0}
+  #produto{padding:48px 0}
+  .produto{padding:24px 20px}
+  .produto p{font-size:16px}
   .sec-head{margin-bottom:36px}
   .sec-head p{font-size:16px}
   .nav .wrap{height:64px}
@@ -438,7 +456,7 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
   <div class="wrap">
     <a href="#top" class="logo" aria-label="Início"><span class="logo-mark">FR</span><span>Filippe Revigat</span></a>
     <nav class="nav-links" id="navLinks">
-      <a href="#sobre">Sobre</a><a href="#numeros">Números</a><a href="#competencias">Competências</a><a href="#ia">Sistemas de IA</a><a href="#trajetoria">Trajetória</a><a href="#contato">Contato</a>
+      <a href="#sobre">Sobre</a><a href="#numeros">Números</a><a href="#competencias">Competências</a><a href="#ia">Sistemas de IA</a><a href="#trajetoria">Trajetória</a><a href="#produto">Produto</a><a href="#contato">Contato</a>
     </nav>
     <a class="nav-cta" href="mailto:revigat@gmail.com">Vamos conversar</a>
     <button class="burger" id="burger" aria-label="Abrir menu" aria-expanded="false"><span></span><span></span><span></span></button>
@@ -753,6 +771,19 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
   </div>
 </section>
 </main>
+
+<section id="produto">
+  <div class="wrap">
+    <div class="card produto reveal">
+      <div>
+        <div class="sec-tag">PRODUTO</div>
+        <h2>Departamento de Marketing com IA</h2>
+        <p>50 agentes, 30 skills, 150 prompts — <span class="grad-text">R$ 49,90</span></p>
+      </div>
+      <a class="btn btn-primary" href="/departamento-marketing/">Conhecer o produto</a>
+    </div>
+  </div>
+</section>
 
 <section class="contact" id="contato">
   <div class="wrap">
