@@ -15,7 +15,7 @@ const SKILLS = [
     steps:[
       ["O negócio","O que é vendido, para quem, a que preço, como é entregue e a meta de receita do marketing."],
       ["O cliente","ICP, avatar, dores e desejos nas palavras dele, objeções e um banco inicial de linguagem."],
-      ["Os concorrentes","As 3–5 alternativas que o comprador realmente pondera — inclusive “não fazer nada”."],
+      ["Os concorrentes","As 3 a 5 alternativas que o comprador realmente pondera, inclusive “não fazer nada”."],
       ["O mercado","TAM/SAM/SOM de trabalho, segmento de entrada e regras da categoria, com grau de confiança."],
       ["Posicionamento, oferta, canais, voz e números","A frase de posição, o pacote, o canal principal, as regras de voz e as métricas datadas."]
     ]},
@@ -48,13 +48,13 @@ const SKILLS = [
     sum:"Desenha o mercado completo: tamanho, segmentos, tendências, canais e espaços pouco explorados.",
     steps:[
       ["Dimensionar o mercado","Tamanho com a conta à mostra e premissas com grau de confiança."],
-      ["Recortar e ranquear segmentos","Escolhe o segmento de entrada — por onde começar de verdade."],
+      ["Recortar e ranquear segmentos","Escolhe o segmento de entrada, por onde começar de verdade."],
       ["Ler tendências e janelas de tempo","O que está subindo, o que é moda e o que já passou."],
       ["Listar canais e regras da categoria","Onde o comprador se reúne e o que é obrigação versus diferencial."],
       ["Apontar o espaço em branco","Nichos pouco atendidos, e gravar o retrato no briefing."]
     ]},
   { id:"customer-deep-dive", cat:"research", name:"Imersão no cliente", cmd:"/marketing:customer-deep-dive",
-    sum:"Monta o retrato do cliente — avatar, linguagem, dores e objeções — nas palavras dele.",
+    sum:"Monta o retrato do cliente (avatar, linguagem, dores e objeções) nas palavras dele.",
     steps:[
       ["Construir o avatar","O dia a dia, os gatilhos e os lugares onde essa pessoa se informa."],
       ["Montar o banco de linguagem","Frases literais de que a copy deve nascer, não paráfrases."],
@@ -68,23 +68,23 @@ const SKILLS = [
       ["Perfilar a empresa","Modelo, preços, sinais de time e lançamentos recentes."],
       ["Abrir a oferta e o posicionamento","Pacote, garantias, a posição que eles declaram e as afirmações já lotadas na categoria."],
       ["Mapear a mensagem e andar o funil","Os ganchos que eles repetem e a jornada vista como comprador."],
-      ["Olhar bibliotecas públicas de anúncios","O que está no ar e há quanto tempo — permanência costuma sinalizar investimento."],
+      ["Olhar bibliotecas públicas de anúncios","O que está no ar e há quanto tempo: permanência costuma sinalizar investimento."],
       ["Caçar fraquezas e escrever como vencer","Reclamações dos próprios clientes e o terreno em que o modelo deles não consegue seguir você."]
     ]},
   { id:"battlecard", cat:"research", name:"Battlecard de vendas", cmd:"/marketing:battlecard",
     sum:"Ficha de uma página: quando você ganha, quando perde e como responder cada objeção desse rival.",
     steps:[
-      ["Reunir a inteligência","Oferta, preço, posicionamento e como as vendas contra eles realmente terminaram — com grau de confiança."],
+      ["Reunir a inteligência","Oferta, preço, posicionamento e como as vendas contra eles realmente terminaram, com grau de confiança."],
       ["Escrever “quando ganhamos”","As 3 a 5 condições em que você é de fato a melhor escolha, ligadas a diferença concreta."],
       ["Escrever “quando perdemos”","Com honestidade: é o que faz o time confiar no restante da ficha."],
-      ["Preparar perguntas-armadilha","Perguntas que o vendedor planta cedo, apoiadas em fraqueza verificada — nunca em premissa falsa."],
+      ["Preparar perguntas-armadilha","Perguntas que o vendedor planta cedo, apoiadas em fraqueza verificada, nunca em premissa falsa."],
       ["Tratar as objeções e a forma de falar do rival","Respostas com evidência e uma regra curta: específico, respeitoso, sem denegrir."]
     ]},
   { id:"research-to-brief", cat:"research", name:"Pesquisa para o briefing", cmd:"/marketing:research-to-brief",
     sum:"Organiza pesquisas soltas no briefing, com nível de confiança em cada achado e contradições à vista.",
     steps:[
       ["Listar as fontes com data","Recência importa na hora de graduar a confiança."],
-      ["Extrair o que muda decisão","Número, citação, padrão — e encaminhar para a seção certa do briefing."],
+      ["Extrair o que muda decisão","Número, citação e padrão, para encaminhar para a seção certa do briefing."],
       ["Graduar T1, T2 ou T3","Fonte, estimativa ou palpite. Palpite vestido de dado não entra como fato."],
       ["Expor contradições","Não apaga e não faz média: as duas versões ficam registradas para resolver."],
       ["Mesclar no briefing e reportar o delta","O que entrou, o que mudou de grau e a próxima pesquisa que mais fortaleceria o arquivo."]
@@ -93,7 +93,7 @@ const SKILLS = [
   { id:"positioning-workshop", cat:"strategy", name:"Workshop de posicionamento", cmd:"/marketing:positioning-workshop",
     sum:"Define a frase de posicionamento e testa contra os concorrentes que já estão no briefing.",
     steps:[
-      ["Listar as alternativas reais","O que o comprador faz no seu lugar — inclusive “não fazer nada” ou “se virar na planilha”."],
+      ["Listar as alternativas reais","O que o comprador faz no seu lugar, inclusive “não fazer nada” ou “se virar na planilha”."],
       ["Listar diferenças verdadeiras","Corta tudo o que o cliente não valoriza, por mais que o time tenha orgulho."],
       ["Ligar diferença → valor → quem mais se importa","Uma diferença só conta pelo valor que cria, e todo valor tem um recorte que sente mais."],
       ["Rascunhar três frases candidatas","No formato: para QUEM, contra QUAL alternativa, a DIFERENÇA, a PROVA."],
@@ -103,14 +103,14 @@ const SKILLS = [
     sum:"Mensagem central, três pilares com prova e uma lista de frases que a marca não usa.",
     steps:[
       ["Destilar uma mensagem central","Tudo o que vier depois precisa subir até ela."],
-      ["Apoiar em três pilares","Cada pilar leva a prova junto — pilar sem evidência não sustenta copy."],
+      ["Apoiar em três pilares","Cada pilar leva a prova junto: pilar sem evidência não sustenta copy."],
       ["Escrever as frases proibidas","Jargão, hype e o vocabulário que esta marca simplesmente não usa."],
       ["Gravar o mapa no briefing","Assim cada peça futura nasce alinhada, e não “cada um diz uma coisa”."]
     ]},
   { id:"offer-builder", cat:"strategy", name:"Construtor de oferta", cmd:"/marketing:offer-builder",
     sum:"Monta a oferta: resultado, pacote, lógica de preço, garantia e urgência só se for real.",
     steps:[
-      ["Nomear o resultado que o cliente compra","O “depois”, específico e honesto — não a lista de entregáveis."],
+      ["Nomear o resultado que o cliente compra","O “depois”, específico e honesto, não a lista de entregáveis."],
       ["Montar o pacote de valor","Cada item precisa matar uma dor nomeada. Enfeite sai."],
       ["Definir a lógica do preço","Contra o custo do problema, o valor do resultado e a alternativa mais próxima."],
       ["Desenhar a reversão de risco","Primeiro o medo maior do comprador; depois a garantia que anula esse medo."],
@@ -120,24 +120,24 @@ const SKILLS = [
     sum:"Lista as objeções, separa o que o cliente diz do que ele quer dizer, e escreve a resposta de cada uma.",
     steps:[
       ["Coletar na literalidade","Paráfrase destrói o detalhe que diagnostica a trava."],
-      ["Separar o dito do real","O que está embaixo da frase — preço, risco, timing, credibilidade."],
+      ["Separar o dito do real","O que está embaixo da frase: preço, risco, timing, credibilidade."],
       ["Ranquear pelo impacto na receita","As três que mais derrubam ou atrasam negócio ganham o trabalho mais fundo."],
       ["Responder começando pela resposta","Uma frase direta, o reenquadramento e a prova que já existe no briefing."],
-      ["Definir onde matar cada objeção","FAQ, e-mail, anúncio ou call — e gravar a biblioteca no briefing."]
+      ["Definir onde matar cada objeção","FAQ, e-mail, anúncio ou call, para gravar a biblioteca no briefing."]
     ]},
   { id:"channel-picker", cat:"strategy", name:"Escolha de canal", cmd:"/marketing:channel-picker",
     sum:"Escolhe um canal principal com base em evidência e monta o plano de 90 dias, com critério de corte.",
     steps:[
-      ["Montar a lista a partir de evidência","Onde o cliente já se reúne — não o canal da moda ou o que o time prefere."],
+      ["Montar a lista a partir de evidência","Onde o cliente já se reúne, não o canal da moda ou o que o time prefere."],
       ["Pontuar em quatro eixos","Presença do ICP, capacidade de executar, economia e velocidade de sinal."],
-      ["Fazer a conta dos finalistas","Quantas vendas o canal precisa gerar, por mês, para se pagar — e se esse volume é plausível."],
-      ["Comprometer-se a um canal principal","No máximo dois de apoio, que alimentem o principal — não um segundo apostão paralelo."],
+      ["Fazer a conta dos finalistas","Quantas vendas o canal precisa gerar, por mês, para se pagar, e se esse volume é plausível."],
+      ["Comprometer-se a um canal principal","No máximo dois de apoio, que alimentem o principal, não um segundo apostão paralelo."],
       ["Desenhar os 90 dias","Setup, volume, escala ou corte, com os números de “está funcionando” definidos antes do gasto."]
     ]},
   { id:"funnel-map", cat:"strategy", name:"Mapa do funil", cmd:"/marketing:funnel-map",
     sum:"Mapeia o funil com números reais, acha o vazamento que mais custa e desenha uma correção testável.",
     steps:[
-      ["Desenhar o funil como ele é","Etapa por etapa, com os números que de fato existem — não o funil desejado no slide."],
+      ["Desenhar o funil como ele é","Etapa por etapa, com os números que de fato existem, não o funil desejado no slide."],
       ["Nomear a pergunta de cada etapa","O que o comprador precisa responder para avançar."],
       ["Achar o vazamento mais caro","O furo que mais dinheiro deixa escapar, não o mais visível."],
       ["Desenhar um único conserto","Dimensionado para testar em cerca de duas semanas."]
@@ -153,7 +153,7 @@ const SKILLS = [
   { id:"experiment-backlog", cat:"strategy", name:"Backlog de experimentos", cmd:"/marketing:experiment-backlog",
     sum:"Lista testes de crescimento com nota e desenha os cinco melhores como experimentos de verdade.",
     steps:[
-      ["Gerar a fila a partir do briefing","Hipóteses ligadas à evidência que você já tem — não a uma moda de growth."],
+      ["Gerar a fila a partir do briefing","Hipóteses ligadas à evidência que você já tem, não a uma moda de growth."],
       ["Dar uma nota honesta","Prioriza com critério explícito, sem inflar o que só é fácil de executar."],
       ["Desenhar os cinco primeiros","Teste mínimo viável, com a regra de decisão escrita antes de começar."]
     ]},
@@ -161,8 +161,8 @@ const SKILLS = [
     sum:"Desenha um teste de preço sem queimar a confiança de quem já é cliente.",
     steps:[
       ["Estabelecer a linha de base","Preço atual, conversão nesse preço e receita por prospect."],
-      ["Escrever a hipótese com evidência","Sem o “porque”, não é hora de testar ao vivo — primeiro pesquisa de disposição a pagar."],
-      ["Mudar UMA estrutura","Faixa, âncora ou empacotamento — não três coisas ao mesmo tempo."],
+      ["Escrever a hipótese com evidência","Sem o “porque”, não é hora de testar ao vivo. Primeiro, pesquisa de disposição a pagar."],
+      ["Mudar UMA estrutura","Faixa, âncora ou empacotamento, não três coisas ao mesmo tempo."],
       ["Proteger a confiança","Prospects novos; cliente atual não é reprecificado no meio do relacionamento sem aviso; preço cotado é honrado."],
       ["Fixar a regra de decisão antes","O que faz o novo preço virar o preço, o que faz reverter, e o registro no briefing."]
     ]},
@@ -171,7 +171,7 @@ const SKILLS = [
     steps:[
       ["Auditar as amostras","Se forem poucas, o perfil nasce mesmo assim, marcado como provisório."],
       ["Extrair os padrões","O que se repete nos textos que realmente soam como a marca."],
-      ["Escrever regras do tipo faça / não faça","Cada regra acompanhada de uma linha real — regra sem exemplo é só opinião."],
+      ["Escrever regras do tipo faça / não faça","Cada regra acompanhada de uma linha real. Regra sem exemplo é só opinião."],
       ["Definir os registros","Como a voz afrouxa ou aperta por formato, e o que nunca muda."],
       ["Listar palavras banidas e calibrar","Três reescritas antes/depois e o perfil salvo para o departamento inteiro usar."]
     ]},
@@ -197,7 +197,7 @@ const SKILLS = [
   { id:"hook-factory", cat:"campaigns", name:"Fábrica de ganchos", cmd:"/marketing:hook-factory",
     sum:"Gera 20 ganchos para um tema, com estrutura primeiro, ranqueados e com a justificativa.",
     steps:[
-      ["Fixar o tema e a audiência","Um assunto, um recorte — não vinte variações de alvo."],
+      ["Fixar o tema e a audiência","Um assunto, um recorte, não vinte variações de alvo."],
       ["Escrever a partir da estrutura","Os ganchos nascem em categorias comprovadas, não de inspiração solta."],
       ["Chegar aos 20","Volume suficiente para escolher, não para publicar tudo."],
       ["Ranquear e mostrar o raciocínio","Por que este abre melhor que aquele, para você decidir com critério."]
@@ -208,16 +208,16 @@ const SKILLS = [
       ["Travar o ângulo","Uma frase: a crença que o anúncio instala e para quem."],
       ["Escolher três formatos","Os que cabem na plataforma e na oferta."],
       ["Escrever em blocos, com a fala literal","Gancho nos três primeiros segundos, agitação, mecanismo e CTA."],
-      ["Oferecer três ganchos por roteiro","Ranqueados — o gancho é a maior parte do anúncio."],
+      ["Oferecer três ganchos por roteiro","Ranqueados: o gancho é a maior parte do anúncio."],
       ["Incluir notas de cena e dois CTAs","Um direto e um mais leve, com passagem de tempo de 30 a 45 segundos."]
     ]},
   { id:"creative-brief", cat:"campaigns", name:"Briefing criativo", cmd:"/marketing:creative-brief",
     sum:"Briefing de uma página para o designer ou editor executar sem nenhuma pergunta de volta.",
     steps:[
       ["Objetivo e insight da audiência","O que o trabalho precisa fazer, e a percepção do público que o sustenta."],
-      ["A proposição de uma frase","Uma ideia só — o que a peça precisa deixar instalado."],
+      ["A proposição de uma frase","Uma ideia só: o que a peça precisa deixar instalado."],
       ["Prova, obrigatórios e referências","O que precisa aparecer, o que não pode, e referências que calibram o tom."],
-      ["Especificações de formato","Tamanho, duração, variações — o suficiente para produzir sem reunião extra."]
+      ["Especificações de formato","Tamanho, duração, variações: o suficiente para produzir sem reunião extra."]
     ]},
   { id:"landing-page", cat:"campaigns", name:"Página de vendas", cmd:"/marketing:landing-page",
     sum:"Texto completo da landing, seção por seção, com nota de design em cada bloco.",
@@ -228,7 +228,7 @@ const SKILLS = [
       ["Nota de design por seção","O texto já chega pronto para o designer montar, não como um esquema oco."]
     ]},
   { id:"email-sequence", cat:"campaigns", name:"Sequência de e-mails", cmd:"/marketing:email-sequence",
-    sum:"Sequência completa — boas-vindas, nutrição, lançamento ou reativação — com um trabalho por e-mail.",
+    sum:"Sequência completa (boas-vindas, nutrição, lançamento ou reativação) com um trabalho por e-mail.",
     steps:[
       ["Escolher o tipo de sequência","Boas-vindas, nutrição, lançamento ou reativação."],
       ["Dar um único trabalho a cada e-mail","Assunto, corpo e o que aquele disparo precisa conseguir."],
@@ -236,7 +236,7 @@ const SKILLS = [
       ["Definir o timing","Quando cada peça sai, e por quê."]
     ]},
   { id:"lead-magnet-builder", cat:"campaigns", name:"Material de captura", cmd:"/marketing:lead-magnet-builder",
-    sum:"Escolhe e escreve um material gratuito que atrai quem pode virar cliente — não colecionador de brinde.",
+    sum:"Escolhe e escreve um material gratuito que atrai quem pode virar cliente, não colecionador de brinde.",
     steps:[
       ["Pontuar ideias contra a oferta paga","O ímã precisa apontar para a mesma compra, não para um público diferente."],
       ["Escolher a vencedora e delinear","Estrutura clara antes de redigir."],
@@ -244,7 +244,7 @@ const SKILLS = [
       ["Redigir a captura e a divulgação","O texto de opt-in e o de promoção que entregam o material."]
     ]},
   { id:"repurpose", cat:"campaigns", name:"Reaproveitamento", cmd:"/marketing:repurpose",
-    sum:"Transforma um conteúdo forte em dez versões nativas para outras plataformas — reconstruídas, não recortadas.",
+    sum:"Transforma um conteúdo forte em dez versões nativas para outras plataformas, reconstruídas, não recortadas.",
     steps:[
       ["Inventariar as ideias do material","Cada afirmação, história, número, método ou tese contrária."],
       ["Ranquear o que se sustenta sozinho","O melhor derivado costuma nascer de uma ideia no meio do texto, não do título original."],
@@ -257,7 +257,7 @@ const SKILLS = [
       ["Inventariar o material bruto","Quem é o cliente, o antes, o que foi feito, os números com recorte de tempo e as falas literais."],
       ["Colocar os números à prova","Linha de base, janela e o que mais acontecia no período. Número sem base não entra como prova."],
       ["Escrever o case na estrutura","Situação, travamento, intervenção, números e citações."],
-      ["Cortar a versão para redes","Gancho, arco em três tempos, um número e CTA — refeita para o feed, não só encolhida."],
+      ["Cortar a versão para redes","Gancho, arco em três tempos, um número e CTA, refeita para o feed, não só encolhida."],
       ["Passar a regra de nomes","Respeita o que pode ou não ser publicado, e o que ainda precisa de autorização."]
     ]},
   { id:"campaign-debrief", cat:"campaigns", name:"Debrief de campanha", cmd:"/marketing:campaign-debrief",
@@ -266,7 +266,7 @@ const SKILLS = [
       ["Relembrar a meta de antes do lançamento","Se ela não foi escrita, esse já é o primeiro achado."],
       ["Colocar meta, resultado e economia lado a lado","Bater o número e ainda assim ser inviável também é um resultado."],
       ["Separar a campanha em elementos","Ângulo, audiência, oferta, formato, gancho, canal, página e timing."],
-      ["Diagnosticar elemento a elemento","Onde os dados não isolam a causa, fica registrado “não dá para saber” — não um palpite vestido de lição."],
+      ["Diagnosticar elemento a elemento","Onde os dados não isolam a causa, fica registrado “não dá para saber”, não um palpite vestido de lição."],
       ["Decidir manter, cortar ou mudar","Com as lições portáveis gravadas no briefing para a próxima campanha sair mais barata."]
     ]}
 ];
@@ -286,7 +286,7 @@ const DEPTS = [
     agents:[
       ["competitor-profiler","O dossiê completo de um concorrente."],
       ["weakness-hunter","Fraquezas exploráveis que os próprios clientes dele já reclamam."],
-      ["ad-library-analyst","O que eles veiculam nas bibliotecas públicas de anúncios — permanência costuma indicar investimento."],
+      ["ad-library-analyst","O que eles veiculam nas bibliotecas públicas de anúncios. Permanência costuma indicar investimento."],
       ["funnel-walker","Percorre o funil deles como comprador e documenta a máquina."]
     ]},
   { id:"cr", name:"Pesquisa de cliente", count:"10 especialistas",
@@ -302,7 +302,7 @@ const DEPTS = [
     agents:[
       ["positioning-strategist","A posição que você realmente pode ganhar, e o argumento por trás dela."],
       ["offer-strategist","A oferta: resultado, pacote, lógica de preço, reversão de risco e urgência real."],
-      ["channel-strategist","Um canal principal até funcionar — escolhido com evidência."],
+      ["channel-strategist","Um canal principal até funcionar, escolhido com evidência."],
       ["metrics-architect","A árvore de métricas: o norte, os drivers e o painel semanal."]
     ]},
   { id:"cs", name:"Estratégia criativa", count:"10 especialistas",
@@ -317,17 +317,17 @@ const DEPTS = [
 
 const FAQS = [
   { q:"Preciso do Claude Code?",
-    a:"O pacote rende mais no Claude Code: é lá que os agentes especialistas, os comandos /marketing: e o carregamento automático do briefing foram feitos para rodar. As skills (arquivos SKILL.md) e os 150 prompts também funcionam no Claude (claude.ai e o aplicativo desktop) e no Grok Bot — e em outros agentes que leem arquivos SKILL.md — como instruções. O Claude Code é uma ferramenta paga à parte e não está incluso no valor do pacote." },
+    a:"O pacote rende mais no Claude Code: é lá que os agentes especialistas, os comandos /marketing: e o carregamento automático do briefing foram feitos para rodar. As skills (arquivos SKILL.md) e os 150 prompts também funcionam no Claude (claude.ai e o aplicativo desktop), no Grok Bot e em outros agentes que leem arquivos SKILL.md, como instruções. O Claude Code é uma ferramenta paga à parte e não está incluso no valor do pacote." },
   { q:"Está em português?",
     a:"Esta é a versão original: skills, agentes e prompts estão em inglês. Esta página e o suporte são em português. Os comandos seguem no formato /marketing:nome. Quando você conversa com os agentes em português, eles respondem em português." },
   { q:"Como eu recebo o acesso depois de pagar?",
-    a:"Depois do pagamento, você recebe o pacote e o passo a passo de instalação. É um conjunto de arquivos para instalar no Claude Code — o caminho natural é o download, não um painel online, porque as skills precisam rodar localmente na sua máquina." },
+    a:"Depois do pagamento, você recebe o pacote e o passo a passo de instalação. É um conjunto de arquivos para instalar no Claude Code. O caminho natural é o download, não um painel online, porque as skills precisam rodar localmente na sua máquina." },
   { q:"Eu preciso saber programar?",
     a:"Não. Você instala o pacote no Claude Code e dispara os fluxos por comando, como /marketing:onboard ou /marketing:hook-factory. Alguma familiaridade com o Claude Code ajuda, mas o trabalho de marketing não exige escrever código." },
   { q:"O que é o briefing único?",
     a:"É o arquivo marketing-brief.md: negócio, mercado, cliente, concorrentes, posicionamento, oferta, canais, voz e números. A skill /marketing:onboard monta esse arquivo numa conversa guiada. Um gancho de início de sessão carrega o briefing automaticamente, para você não reexplicar o negócio a cada conversa." },
   { q:"Isso substitui a minha estratégia?",
-    a:"Não. O departamento faz o trabalho pesado — pesquisa, rascunhos, planos, peças. A estratégia e as decisões continuam com você. O CMO virtual aponta um gargalo e propõe o próximo passo; quem aprova é você." },
+    a:"Não. O departamento faz o trabalho pesado: pesquisa, rascunhos, planos, peças. A estratégia e as decisões continuam com você. O CMO virtual aponta um gargalo e propõe o próximo passo; quem aprova é você." },
   { q:"Tem garantia?",
     a:"Sim. Você tem 7 dias de garantia. Se não gostar, pede o reembolso pela própria Kiwify e recebe 100% do valor de volta." }
 ];
