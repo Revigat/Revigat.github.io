@@ -6,6 +6,10 @@
 <title>Filippe Revigat | Marketing Digital, Growth &amp; Performance | IA aplicada a Negócios</title>
 <meta name="description" content="Portfólio de Filippe Revigat: especialista em Marketing Digital, Growth &amp; Performance e IA aplicada a Negócios. Curitiba/PR.">
 <meta name="theme-color" content="#050914">
+<link rel="canonical" href="https://revigat.github.io/">
+<link rel="alternate" hreflang="pt-BR" href="https://revigat.github.io/">
+<link rel="alternate" hreflang="en" href="https://revigat.github.io/en/">
+<link rel="alternate" hreflang="x-default" href="https://revigat.github.io/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&family=Sora:wght@700;800&display=swap" rel="stylesheet">
@@ -52,6 +56,11 @@ section{position:relative;z-index:1;padding:120px 0}
 .nav-links a:hover::after,.nav-links a.active::after{width:100%}
 .nav-cta{font-size:13px;padding:9px 16px;border-radius:999px;border:1px solid var(--line2);color:var(--cyan);transition:all .25s}
 .nav-cta:hover{background:rgba(34,211,238,.1);box-shadow:var(--glow)}
+.nav-tools{display:flex;align-items:center;gap:10px;flex:none}
+.lang-switch{display:inline-flex;align-items:center;padding:3px;border:1px solid var(--line2);border-radius:999px;font-family:var(--fm);font-size:11px;letter-spacing:.06em;line-height:1;background:rgba(8,14,32,.45)}
+.lang-switch a{color:var(--muted);padding:6px 8px;border-radius:999px;min-width:30px;text-align:center}
+.lang-switch a:hover{color:var(--text)}
+.lang-switch a[aria-current="page"]{background:rgba(34,211,238,.16);color:var(--cyan)}
 .burger{display:none;background:none;border:1px solid var(--line2);border-radius:10px;width:42px;height:42px;color:var(--text);cursor:pointer}
 .burger span{display:block;width:18px;height:2px;background:currentColor;margin:4px auto;transition:.3s}
 .progress{position:fixed;top:0;left:0;height:2px;width:0;background:var(--grad);z-index:60;box-shadow:0 0 10px var(--cyan)}
@@ -319,9 +328,10 @@ section{position:relative;z-index:1;padding:120px 0}
 .produto .btn{flex:none;position:relative;z-index:1}
 footer{position:relative;z-index:1;border-top:1px solid var(--line);padding:26px 0;color:var(--dim);font-size:13px}
 footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
-@media (max-width:1120px) and (min-width:861px){
-  .nav-links{gap:14px;font-size:13px}
+@media (max-width:1240px) and (min-width:861px){
+  .nav-links{gap:12px;font-size:13px}
   .nav-cta{padding:8px 12px;font-size:12px}
+  .nav-tools{gap:8px}
 }
 @media (max-width:1024px){
   .name-row{gap:32px}
@@ -417,6 +427,12 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
   footer .wrap{flex-direction:column;align-items:center;text-align:center;gap:6px}
   .marquee{margin-top:24px}
 }
+@media (max-width:420px){
+  .logo{font-size:14px;gap:8px}
+  .logo-mark{width:32px;height:32px;font-size:13px}
+  .nav-tools{gap:6px}
+  .lang-switch a{padding:6px 7px;min-width:28px}
+}
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
   *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;transition-delay:0s!important}
@@ -459,8 +475,14 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
     <nav class="nav-links" id="navLinks">
       <a href="#sobre">Sobre</a><a href="#numeros">Números</a><a href="#competencias">Competências</a><a href="#ia">Sistemas de IA</a><a href="#trajetoria">Trajetória</a><a href="#produto">Produto</a><a href="#contato">Contato</a>
     </nav>
-    <a class="nav-cta" href="mailto:revigat@gmail.com">Vamos conversar</a>
-    <button class="burger" id="burger" aria-label="Abrir menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    <div class="nav-tools">
+      <nav class="lang-switch" aria-label="Idioma">
+        <a href="/" hreflang="pt-BR" lang="pt-BR" aria-current="page" aria-label="Português">PT</a>
+        <a href="/en/" hreflang="en" lang="en" aria-label="English">EN</a>
+      </nav>
+      <a class="nav-cta" href="mailto:revigat@gmail.com">Vamos conversar</a>
+      <button class="burger" id="burger" aria-label="Abrir menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
   </div>
 </header>
 
