@@ -406,6 +406,10 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
   .ctas{justify-content:center}
   .hero-meta{justify-content:center;gap:10px 18px;font-size:13.5px}
   .about-text p{font-size:16px}
+  .about-text .mini-label{font-size:11px;letter-spacing:.14em;margin:20px 0 8px}
+  .about-text .chips{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+  .about-text .chip{display:flex;align-items:center;justify-content:center;text-align:center;font-size:12px;line-height:1.25;padding:6px 8px;white-space:normal;min-height:32px}
+  .about-text .chips>.chip:last-child:nth-child(odd){grid-column:1 / -1;width:calc((100% - 8px) / 2);justify-self:center}
   .stat .num{font-size:clamp(34px,10.5vw,46px)}
   .stat .sh-num{font-size:clamp(52px,16vw,68px)}
   .sostac .slbl{font-size:14px}
