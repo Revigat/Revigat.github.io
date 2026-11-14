@@ -319,6 +319,7 @@ section{position:relative;z-index:1;padding:120px 0}
 .contact-links svg{width:17px;height:17px;color:var(--cyan)}
 #produto{padding:80px 0}
 #produto .wrap{display:flex;flex-direction:column;gap:18px}
+.auditor > div{min-width:0;flex:1}
 .auditor .chips{margin-top:16px}
 .produto{display:flex;align-items:center;justify-content:space-between;gap:28px 48px;padding:36px 40px;
   background:linear-gradient(120deg,rgba(15,30,66,.85),rgba(10,20,44,.75) 55%,rgba(8,40,48,.42));border-color:rgba(34,211,238,.3);
@@ -472,6 +473,7 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
   <symbol id="i-clock" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></g></symbol>
   <symbol id="i-grid" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3.5" y="3.5" width="7" height="7" rx="1.5"/><rect x="13.5" y="3.5" width="7" height="7" rx="1.5"/><rect x="3.5" y="13.5" width="7" height="7" rx="1.5"/><rect x="13.5" y="13.5" width="7" height="7" rx="1.5"/></g></symbol>
   <symbol id="i-ads" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10v4a1 1 0 0 0 1 1h2l5 4V5L6 9H4a1 1 0 0 0-1 1z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M18.5 5.5a9 9 0 0 1 0 13"/></g></symbol>
+  <symbol id="i-audit" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m15.2 15.2 5 5"/></g></symbol>
 </svg>
 
 <header class="nav" id="nav">
@@ -511,6 +513,7 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
       <p class="typing" aria-live="polite"><span class="pre">&gt; focus:</span> <span class="tw" id="typed"></span><span class="caret"></span></p>
       <div class="ctas">
         <a class="btn btn-primary btn-lead" href="/departamento-marketing/en/"><svg><use href="#i-bot"/></svg>AI agent skills</a>
+        <a class="btn btn-primary btn-lead" href="#auditor"><svg><use href="#i-audit"/></svg>Site Auditor</a>
         <a class="btn btn-primary" href="https://www.linkedin.com/in/filippe-revigat" target="_blank" rel="noopener"><svg><use href="#i-in"/></svg>LinkedIn</a>
         <a class="btn btn-ghost" href="mailto:revigat@gmail.com"><svg><use href="#i-mail"/></svg>revigat@gmail.com</a>
       </div>
@@ -789,13 +792,14 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
 
 <section id="produto">
   <div class="wrap">
-    <div class="card produto auditor reveal">
+    <div class="card produto auditor reveal" id="auditor">
       <div>
-        <div class="sec-tag">SKILL</div>
+        <div class="sec-tag">PRODUCT</div>
         <h2>Site Auditor</h2>
-        <p>We built a skill that audits your site, points out what slows it down, and applies the improvements.</p>
-        <div class="chips"><span class="chip">Speed</span><span class="chip t">Weight</span><span class="chip v">Mobile</span></div>
+        <p>A skill that audits your site, points out what slows it down, and applies the improvements. Faster, lighter, and optimized for any device.</p>
+        <div class="chips"><span class="chip">Speed</span><span class="chip t">Weight</span><span class="chip v">Any device</span></div>
       </div>
+      <a class="btn btn-primary" href="#contato">Learn more</a>
     </div>
     <div class="card produto reveal">
       <div>
