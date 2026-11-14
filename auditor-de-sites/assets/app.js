@@ -14,26 +14,20 @@ function isCheckout(url) {
 }
 
 if (isCheckout(CTA_URL)) {
-  const CART_NAV_DELAY_MS = 300;
-  function trackAddToCartAndGo(event) {
-    const el = event.currentTarget;
-    if (!el || !el.hasAttribute("data-cta")) return;
+  let cartTrackedAt = 0;
+  function trackAddToCart() {
+    const now = Date.now();
+    if (now - cartTrackedAt < 1000) return;
+    cartTrackedAt = now;
     try {
       if (typeof window.rdt === "function") window.rdt("track", "AddToCart");
     } catch (_) {}
-    if (event.type !== "click") return;
-    if (event.defaultPrevented) return;
-    if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
-    if (typeof event.button === "number" && event.button !== 0) return;
-    if (el.target && el.target !== "_self") return;
-    const href = el.href;
-    if (!href) return;
-    event.preventDefault();
-    window.setTimeout(() => { window.location.assign(href); }, CART_NAV_DELAY_MS);
   }
   document.querySelectorAll("a[data-cta]").forEach(el => {
-    el.addEventListener("click", trackAddToCartAndGo);
-    el.addEventListener("auxclick", trackAddToCartAndGo);
+    el.addEventListener("pointerdown", trackAddToCart, { passive: true });
+    el.addEventListener("click", trackAddToCart);
+    el.addEventListener("auxclick", trackAddToCart);
+    el.addEventListener("keydown", e => { if (e.key === "Enter" || e.key === " ") trackAddToCart(); });
   });
 }
 
@@ -83,18 +77,6 @@ if (!reduce && "IntersectionObserver" in window) {
 } else {
   document.querySelectorAll(".reveal").forEach(el => el.classList.add("in"));
 }
-
-document.querySelectorAll(".faq").forEach(item => {
-  const btn = item.querySelector("button");
-  const ans = item.querySelector(".ans");
-  if (!btn || !ans) return;
-  btn.addEventListener("click", () => {
-    const open = btn.getAttribute("aria-expanded") === "true";
-    document.querySelectorAll(".faq button").forEach(b => b.setAttribute("aria-expanded", "false"));
-    document.querySelectorAll(".faq .ans").forEach(a => a.classList.remove("open"));
-    if (!open) { btn.setAttribute("aria-expanded", "true"); ans.classList.add("open"); }
-  });
-});
 
 (function () {
   const c = document.getElementById("net");

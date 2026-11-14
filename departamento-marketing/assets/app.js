@@ -338,8 +338,8 @@ document.querySelectorAll("[data-buy]").forEach(el => {
   el.setAttribute("href", BUY_URL);
 });
 
-/* AddToCart on checkout clicks. Same-tab navigations wait briefly so the pixel can send. */
-const CART_NAV_DELAY_MS = 300;
+/* AddToCart no pointerdown, antes da navegação. O link segue na hora. */
+let cartTrackedAt = 0;
 function isCheckoutLink(el) {
   if (!el || el.tagName !== "A") return false;
   if (el.hasAttribute("data-buy")) return true;
@@ -349,25 +349,21 @@ function isCheckoutLink(el) {
     return false;
   }
 }
-function trackAddToCartAndGo(event) {
-  const el = event.currentTarget;
-  if (!isCheckoutLink(el)) return;
+function trackAddToCart() {
+  const now = Date.now();
+  if (now - cartTrackedAt < 1000) return;
+  cartTrackedAt = now;
   try {
     if (typeof window.rdt === "function") window.rdt("track", "AddToCart");
   } catch (_) {}
-  if (event.type !== "click") return;
-  if (event.defaultPrevented) return;
-  if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
-  if (typeof event.button === "number" && event.button !== 0) return;
-  if (el.target && el.target !== "_self") return;
-  const href = el.href;
-  if (!href) return;
-  event.preventDefault();
-  window.setTimeout(() => { window.location.assign(href); }, CART_NAV_DELAY_MS);
 }
 document.querySelectorAll("a[data-buy], a[href*='pay.kiwify.com.br']").forEach(el => {
-  el.addEventListener("click", trackAddToCartAndGo);
-  el.addEventListener("auxclick", trackAddToCartAndGo);
+  el.addEventListener("pointerdown", () => { if (isCheckoutLink(el)) trackAddToCart(); }, { passive: true });
+  el.addEventListener("click", () => { if (isCheckoutLink(el)) trackAddToCart(); });
+  el.addEventListener("auxclick", () => { if (isCheckoutLink(el)) trackAddToCart(); });
+  el.addEventListener("keydown", e => {
+    if ((e.key === "Enter" || e.key === " ") && isCheckoutLink(el)) trackAddToCart();
+  });
 });
 
 const nav = document.getElementById("nav");
@@ -489,7 +485,15 @@ function closeModal(){
 modalClose.addEventListener("click", closeModal);
 bg.addEventListener("click", e => { if (e.target === bg) closeModal(); });
 document.addEventListener("keydown", e => {
-  if (e.key === "Escape" && bg.classList.contains("open")) closeModal();
+  if (!bg.classList.contains("open")) return;
+  if (e.key === "Escape") { closeModal(); return; }
+  if (e.key !== "Tab") return;
+  const focusable = [...modal.querySelectorAll('a[href], button:not([disabled]), input, select, textarea, [tabindex]:not([tabindex="-1"])')];
+  if (!focusable.length) return;
+  const first = focusable[0], last = focusable[focusable.length - 1];
+  const active = document.activeElement;
+  if (e.shiftKey && (active === first || active === modal)) { e.preventDefault(); last.focus(); }
+  else if (!e.shiftKey && active === last) { e.preventDefault(); first.focus(); }
 });
 
 const tabs = document.getElementById("deptTabs");
@@ -535,67 +539,65 @@ FAQS.forEach((f, i) => {
   faqList.appendChild(wrap);
 });
 
-(function(){
+(function () {
   const c = document.getElementById("net");
   if (!c || reduce) return;
   const ctx = c.getContext("2d");
-  let w, h, pts, raf;
-  function resize(){
+  const small = window.matchMedia("(max-width: 640px)");
+  let w, h, pts, running = false, dpr = 1;
+  function resize() {
     const r = c.parentElement.getBoundingClientRect();
-    w = c.width = Math.floor(r.width * devicePixelRatio);
-    h = c.height = Math.floor(r.height * devicePixelRatio);
+    dpr = Math.min(window.devicePixelRatio || 1, 2);
+    w = c.width = Math.floor(r.width * dpr);
+    h = c.height = Math.floor(r.height * dpr);
     c.style.width = r.width + "px";
     c.style.height = r.height + "px";
     const n = Math.min(70, Math.floor((r.width * r.height) / 18000));
-    pts = Array.from({length:n}, () => ({
-      x: Math.random()*w, y: Math.random()*h,
-      vx: (Math.random()-.5)*0.22*devicePixelRatio,
-      vy: (Math.random()-.5)*0.22*devicePixelRatio
+    pts = Array.from({ length: Math.max(n, 12) }, () => ({
+      x: Math.random() * w, y: Math.random() * h,
+      vx: (Math.random() - .5) * 0.22 * dpr,
+      vy: (Math.random() - .5) * 0.22 * dpr
     }));
+    draw(false);
   }
-  function tick(){
-    ctx.clearRect(0,0,w,h);
-    const max = 140 * devicePixelRatio;
-    for (let i=0;i<pts.length;i++){
+  function draw(move) {
+    if (!pts) return;
+    ctx.clearRect(0, 0, w, h);
+    const max = 140 * dpr;
+    for (let i = 0; i < pts.length; i++) {
       const pt = pts[i];
-      pt.x += pt.vx; pt.y += pt.vy;
-      if (pt.x<0||pt.x>w) pt.vx*=-1;
-      if (pt.y<0||pt.y>h) pt.vy*=-1;
+      if (move) {
+        pt.x += pt.vx; pt.y += pt.vy;
+        if (pt.x < 0 || pt.x > w) pt.vx *= -1;
+        if (pt.y < 0 || pt.y > h) pt.vy *= -1;
+      }
       ctx.beginPath();
-      ctx.arc(pt.x,pt.y,1.4*devicePixelRatio,0,Math.PI*2);
-      ctx.fillStyle="rgba(34,211,238,.55)";
+      ctx.arc(pt.x, pt.y, 1.4 * dpr, 0, Math.PI * 2);
+      ctx.fillStyle = "rgba(34,211,238,.55)";
       ctx.fill();
-      for (let j=i+1;j<pts.length;j++){
+      for (let j = i + 1; j < pts.length; j++) {
         const q = pts[j];
-        const dx=pt.x-q.x, dy=pt.y-q.y, d=Math.hypot(dx,dy);
-        if (d<max){
+        const dx = pt.x - q.x, dy = pt.y - q.y, d = Math.hypot(dx, dy);
+        if (d < max) {
           ctx.beginPath();
-          ctx.moveTo(pt.x,pt.y); ctx.lineTo(q.x,q.y);
-          ctx.strokeStyle=`rgba(59,130,246,${0.16*(1-d/max)})`;
-          ctx.lineWidth=devicePixelRatio;
+          ctx.moveTo(pt.x, pt.y); ctx.lineTo(q.x, q.y);
+          ctx.strokeStyle = "rgba(59,130,246," + (0.16 * (1 - d / max)) + ")";
+          ctx.lineWidth = dpr;
           ctx.stroke();
         }
       }
     }
-    raf = requestAnimationFrame(tick);
+  }
+  function loop() {
+    if (reduce || small.matches) { running = false; draw(false); return; }
+    running = true;
+    const box = hero ? hero.getBoundingClientRect() : c.getBoundingClientRect();
+    const visible = box.bottom > 0 && box.top < window.innerHeight;
+    if (!document.hidden && visible) draw(true);
+    requestAnimationFrame(loop);
   }
   resize();
-  tick();
-  window.addEventListener("resize", resize, { passive:true });
-})();
-
-// hero word rotators (title + eyebrow, in sync)
-(function(){
-  var groups=[].map.call(document.querySelectorAll('.rotator'),function(g){return g.querySelectorAll('.rot-item');}).filter(function(x){return x.length>1;});
-  if(!groups.length) return;
-  var i=0;
-  setInterval(function(){
-    var n=(i+1)%groups[0].length;
-    groups.forEach(function(items){
-      var cur=items[i]; cur.classList.remove('is-on'); cur.classList.add('is-out');
-      setTimeout(function(){cur.classList.remove('is-out');},600);
-      items[n].classList.add('is-on');
-    });
-    i=n;
-  },2600);
+  if (!small.matches) loop();
+  small.addEventListener("change", () => { if (!running && !small.matches) loop(); else draw(false); });
+  window.addEventListener("resize", resize, { passive: true });
 })();

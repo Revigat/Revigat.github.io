@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<script>document.documentElement.classList.add("js")</script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Site Auditor | Filippe Revigat</title>
 <meta name="description" content="A skill that audits your site, points out what slows it down, and applies the improvements. Faster, lighter, and optimized for any device, phone and computer.">
@@ -44,7 +45,7 @@ rdt('track', 'PageVisit');
 
 <header class="nav" id="nav">
   <div class="wrap">
-    <a href="/en/" class="logo" aria-label="Back to Filippe Revigat's portfolio"><span class="logo-mark">FR</span><span>← Filippe Revigat</span></a>
+    <a href="/en/" class="logo"><span class="logo-mark">FR</span><span>← Filippe Revigat</span></a>
     <nav class="nav-links" id="navLinks">
       <a href="#conteudo">The problem</a>
       <a href="#pacote">The package</a>
@@ -54,8 +55,8 @@ rdt('track', 'PageVisit');
     </nav>
     <div class="nav-tools">
       <nav class="lang-switch" aria-label="Language">
-        <a href="/auditor-de-sites/" hreflang="pt-BR" lang="pt-BR" aria-label="Português">PT</a>
-        <a href="/auditor-de-sites/en/" hreflang="en" lang="en" aria-current="page" aria-label="English">EN</a>
+        <a href="/auditor-de-sites/" hreflang="pt-BR" lang="pt-BR" aria-label="PT, Português">PT</a>
+        <a href="/auditor-de-sites/en/" hreflang="en" lang="en" aria-current="page" aria-label="EN, English">EN</a>
       </nav>
       <a class="nav-cta" data-cta href="/en/#contato">Get the Auditor</a>
       <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" type="button" data-open="Open menu" data-close="Close menu"><span></span><span></span><span></span></button>
@@ -74,9 +75,9 @@ rdt('track', 'PageVisit');
         <a class="btn btn-primary" data-cta href="/en/#contato">Get the Auditor <svg><use href="#i-arrow"/></svg></a>
         <a class="btn btn-ghost" href="#pacote">See what is in the file</a>
       </div>
-      <div class="hero-meta">
-        <span><b>5.6 MB</b> to 776 KB</span>
-        <span><b>3.1 s</b> to 2.0 s</span>
+      <div class="hero-meta proof-meta">
+        <span>both layouts, <b>5.6 MB</b> to <b>710 KB</b></span>
+        <span>mobile LCP: <b>1.7 s</b></span>
         <span><b>any</b> device</span>
       </div>
     </div>
@@ -220,18 +221,18 @@ rdt('track', 'PageVisit');
     <div class="sec-head reveal">
       <div class="sec-tag">PROOF</div>
       <h2>This site already paid for a slow page.</h2>
-      <p>The home here went through the same logic: find what was stuck and apply the fix. Mobile test, before and after.</p>
+      <p>The home here went through the same logic: find what was stuck and apply the fix. The weight holds on phone and computer.</p>
     </div>
     <div class="proof">
       <article class="card inside reveal">
-        <div class="num">776 KB</div>
+        <div class="num">710 KB</div>
         <h3>down from 5.6 MB</h3>
-        <p>Home page weight on mobile, after what was stuck left the page.</p>
+        <p>Home page weight on phone and computer, with the same light video on both.</p>
       </article>
       <article class="card inside reveal d1">
-        <div class="num">2.0 s</div>
-        <h3>down from 3.1 s</h3>
-        <p>Mobile LCP of the same home, on the same kind of test.</p>
+        <div class="num">1.7 s</div>
+        <h3>mobile LCP</h3>
+        <p>Largest paint of the home on a phone, on the slow-network test.</p>
       </article>
     </div>
   </div>
@@ -244,30 +245,12 @@ rdt('track', 'PageVisit');
       <h2>Straight questions.</h2>
     </div>
     <div class="faq-list" id="faqList">
-      <div class="faq">
-        <button type="button" aria-expanded="false"><span>Do I need to know how to code?</span><svg aria-hidden="true"><use href="#i-plus"/></svg></button>
-        <div class="ans"><p>No. The README, in English and in Portuguese, takes the file install through to the skill running in the agent.</p></div>
-      </div>
-      <div class="faq">
-        <button type="button" aria-expanded="false"><span>Does it work on phone and computer?</span><svg aria-hidden="true"><use href="#i-plus"/></svg></button>
-        <div class="ans"><p>Yes. The audit looks at the page on any device. The goal is a faster, lighter page on both.</p></div>
-      </div>
-      <div class="faq">
-        <button type="button" aria-expanded="false"><span>Which agents are included?</span><svg aria-hidden="true"><use href="#i-plus"/></svg></button>
-        <div class="ans"><p>Claude Code, Grok, and Gemini. The README says how to install each one.</p></div>
-      </div>
-      <div class="faq">
-        <button type="button" aria-expanded="false"><span>Is there a repository?</span><svg aria-hidden="true"><use href="#i-plus"/></svg></button>
-        <div class="ans"><p>No. You get a file. No GitHub.</p></div>
-      </div>
-      <div class="faq">
-        <button type="button" aria-expanded="false"><span>What does the skill change on the page?</span><svg aria-hidden="true"><use href="#i-plus"/></svg></button>
-        <div class="ans"><p>It points out what slows the page down and applies the improvements in weight, speed, and use on any device. The report shows the before and what went in.</p></div>
-      </div>
-      <div class="faq">
-        <button type="button" aria-expanded="false"><span>How do I ask for the package?</span><svg aria-hidden="true"><use href="#i-plus"/></svg></button>
-        <div class="ans"><p>The button goes to the contact on this site. The reply comes back with the path to the file.</p></div>
-      </div>
+      <details class="faq"><summary><span>Do I need to know how to code?</span><svg aria-hidden="true"><use href="#i-plus"/></svg></summary><div class="ans"><p>No. The README, in English and in Portuguese, takes the file install through to the skill running in the agent.</p></div></details>
+      <details class="faq"><summary><span>Does it work on phone and computer?</span><svg aria-hidden="true"><use href="#i-plus"/></svg></summary><div class="ans"><p>Yes. The audit looks at the page on any device. The goal is a faster, lighter page on both.</p></div></details>
+      <details class="faq"><summary><span>Which agents are included?</span><svg aria-hidden="true"><use href="#i-plus"/></svg></summary><div class="ans"><p>Claude Code, Grok, and Gemini. The README says how to install each one.</p></div></details>
+      <details class="faq"><summary><span>Is there a repository?</span><svg aria-hidden="true"><use href="#i-plus"/></svg></summary><div class="ans"><p>No. You get a file. No GitHub.</p></div></details>
+      <details class="faq"><summary><span>What does the skill change on the page?</span><svg aria-hidden="true"><use href="#i-plus"/></svg></summary><div class="ans"><p>It points out what slows the page down and applies the improvements in weight, speed, and use on any device. The report shows the before and what went in.</p></div></details>
+      <details class="faq"><summary><span>How do I ask for the package?</span><svg aria-hidden="true"><use href="#i-plus"/></svg></summary><div class="ans"><p>The button goes to the contact on this site. The reply comes back with the path to the file.</p></div></details>
     </div>
   </div>
 </section>

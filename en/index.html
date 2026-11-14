@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<script>document.documentElement.classList.add("js")</script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Filippe Revigat | Digital Marketing, Growth &amp; Performance | AI for Business</title>
 <meta name="description" content="Portfolio of Filippe Revigat: specialist in digital marketing, growth and performance, and AI applied to business. Based in Curitiba, Brazil.">
@@ -16,25 +17,26 @@
 <link rel="alternate" hreflang="pt-BR" href="https://revigat.github.io/">
 <link rel="alternate" hreflang="en" href="https://revigat.github.io/en/">
 <link rel="alternate" hreflang="x-default" href="https://revigat.github.io/">
-<link rel="preload" href="../assets/fonts/sora.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23050914'/%3E%3Ctext x='50%25' y='58%25' text-anchor='middle' font-family='Arial' font-weight='700' font-size='28' fill='%2322d3ee'%3EFR%3C/text%3E%3C/svg%3E">
 <style>
 @font-face{font-family:"Space Grotesk";font-style:normal;font-weight:400 700;font-display:swap;src:url("../assets/fonts/space-grotesk.woff2") format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
 @font-face{font-family:"Inter";font-style:normal;font-weight:400 700;font-display:swap;src:url("../assets/fonts/inter.woff2") format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
-@font-face{font-family:"JetBrains Mono";font-style:normal;font-weight:400 600;font-display:swap;src:url("../assets/fonts/jetbrains-mono.woff2") format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
 @font-face{font-family:"Sora";font-style:normal;font-weight:700 800;font-display:swap;src:url("../assets/fonts/sora.woff2") format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:"Sora Fallback";src:local("Arial"),local("Liberation Sans");font-weight:700 800;font-style:normal;size-adjust:110.72%;ascent-override:87.61%;descent-override:26.19%;line-gap-override:0%}
+@font-face{font-family:"Inter Fallback";src:local("Arial"),local("Liberation Sans");font-weight:400 700;font-style:normal;size-adjust:107.4%;ascent-override:90.2%;descent-override:22.46%;line-gap-override:0%}
+@font-face{font-family:"Space Grotesk Fallback";src:local("Arial"),local("Liberation Sans");font-weight:400 700;font-style:normal;size-adjust:110.98%;ascent-override:88.66%;descent-override:26.31%;line-gap-override:0%}
 :root{
   --bg:#050914; --bg2:#0a1124; --panel:rgba(14,24,48,.62); --panel-solid:#0c1530;
   --line:rgba(120,170,255,.14); --line2:rgba(120,170,255,.26);
-  --text:#e6edf8; --muted:#93a3c0; --dim:#5f6f8e;
+  --text:#e6edf8; --muted:#93a3c0; --dim:#7a8aa8;
   --blue:#3b82f6; --blue2:#2f6bff; --cyan:#22d3ee; --teal:#2dd4bf; --violet:#8b5cf6;
   --grad:linear-gradient(100deg,#3b82f6 0%,#22d3ee 55%,#2dd4bf 100%);
   --grad2:linear-gradient(120deg,#8b5cf6,#3b82f6 50%,#22d3ee);
   --glow:0 0 24px rgba(34,211,238,.35);
   --radius:18px;
-  --fh:"Space Grotesk",ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
-  --fb:"Inter",ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
-  --fm:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  --fh:"Space Grotesk","Space Grotesk Fallback",ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+  --fb:"Inter","Inter Fallback",ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+  --fm:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;scroll-padding-top:80px}
@@ -47,6 +49,9 @@ body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;opac
   background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);
   background-size:64px 64px;mask-image:radial-gradient(ellipse at center,#000 10%,transparent 75%);-webkit-mask-image:radial-gradient(ellipse at center,#000 10%,transparent 75%)}
 a{color:inherit;text-decoration:none}
+.skip{position:absolute;left:-999px;top:8px;z-index:80;background:var(--grad);color:#041020;padding:10px 16px;border-radius:10px;font-weight:600}
+.skip:focus,.skip:focus-visible{left:8px}
+:focus-visible{outline:2px solid var(--cyan);outline-offset:3px;border-radius:6px}
 ::selection{background:rgba(34,211,238,.3)}
 .wrap{width:min(1180px,92vw);margin:0 auto;position:relative;z-index:1}
 section{position:relative;z-index:1;padding:120px 0}
@@ -55,7 +60,7 @@ section{position:relative;z-index:1;padding:120px 0}
 .nav{position:fixed;top:0;left:0;right:0;z-index:50;transition:background .3s,border-color .3s;border-bottom:1px solid transparent}
 .nav.scrolled{background:rgba(5,9,20,.72);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-color:var(--line)}
 .nav .wrap{display:flex;align-items:center;justify-content:space-between;height:70px}
-.logo{display:flex;align-items:center;gap:10px;font-family:"Sora",var(--fh);font-weight:700;letter-spacing:-.01em}
+.logo{display:flex;align-items:center;gap:10px;font-family:"Sora","Sora Fallback",var(--fh);font-weight:700;letter-spacing:-.01em}
 .logo-mark{width:36px;height:36px;border-radius:10px;display:grid;place-items:center;background:linear-gradient(135deg,rgba(59,130,246,.25),rgba(34,211,238,.18));border:1px solid var(--line2);font-size:14px;color:var(--cyan);box-shadow:var(--glow)}
 .nav-links{display:flex;gap:28px;font-size:14px;color:var(--muted)}
 .nav-links a{position:relative;transition:color .2s}
@@ -66,7 +71,7 @@ section{position:relative;z-index:1;padding:120px 0}
 .nav-cta:hover{background:rgba(34,211,238,.1);box-shadow:var(--glow)}
 .nav-tools{display:flex;align-items:center;gap:10px;flex:none}
 .lang-switch{display:inline-flex;align-items:center;padding:3px;border:1px solid var(--line2);border-radius:999px;font-family:var(--fm);font-size:11px;letter-spacing:.06em;line-height:1;background:rgba(8,14,32,.45)}
-.lang-switch a{color:var(--muted);padding:6px 8px;border-radius:999px;min-width:30px;text-align:center}
+.lang-switch a{color:var(--muted);padding:8px 9px;border-radius:999px;min-width:32px;min-height:28px;display:inline-flex;align-items:center;justify-content:center;text-align:center}
 .lang-switch a:hover{color:var(--text)}
 .lang-switch a[aria-current="page"]{background:rgba(34,211,238,.16);color:var(--cyan)}
 .burger{display:none;background:none;border:1px solid var(--line2);border-radius:10px;width:42px;height:42px;color:var(--text);cursor:pointer}
@@ -79,7 +84,7 @@ section{position:relative;z-index:1;padding:120px 0}
 .eyebrow{display:inline-flex;align-items:center;gap:10px;font-family:var(--fm);font-size:13px;color:var(--cyan);padding:7px 14px;border-radius:999px;border:1px solid rgba(34,211,238,.28);background:rgba(34,211,238,.06)}
 .dot{width:8px;height:8px;border-radius:50%;background:var(--teal);box-shadow:0 0 10px var(--teal);animation:pulse 2s infinite}
 @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(.75)}}
-.hero h1{font-family:"Sora",var(--fh);font-weight:800;font-size:clamp(56px,7.2vw,94px);line-height:1;letter-spacing:-.04em;margin:22px 0 18px}
+.hero h1{font-family:"Sora","Sora Fallback",var(--fh);font-weight:800;font-size:clamp(56px,7.2vw,94px);line-height:1;letter-spacing:-.04em;margin:22px 0 18px}
 .hero h1 .l2{padding-bottom:.1em;margin-bottom:-.1em}
 .hero h1 .l2{display:block}
 .name-row{display:flex;align-items:center;gap:40px;margin:22px 0 18px}
@@ -128,6 +133,7 @@ section{position:relative;z-index:1;padding:120px 0}
 .card{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);position:relative;transition:border-color .3s,transform .3s,box-shadow .3s}
 .card:hover{border-color:rgba(34,211,238,.35);box-shadow:0 0 0 1px rgba(34,211,238,.08),0 20px 50px rgba(0,0,0,.35),0 0 40px rgba(59,130,246,.08)}
 .reveal{opacity:0;transform:translateY(28px);transition:opacity .9s cubic-bezier(.2,.7,.2,1),transform .9s cubic-bezier(.2,.7,.2,1),border-color .3s,box-shadow .3s}
+html:not(.js) .reveal{opacity:1;transform:none}
 .reveal.in{opacity:1;transform:none}
 .reveal.d1{transition-delay:.1s}.reveal.d2{transition-delay:.2s}.reveal.d3{transition-delay:.3s}
 .about-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}
@@ -142,7 +148,7 @@ section{position:relative;z-index:1;padding:120px 0}
 .sostac{padding:28px}
 .sostac svg{width:100%;height:auto;display:block}
 .sostac-desc{margin-top:8px;min-height:72px;text-align:center}
-.sostac-desc h4{font-family:var(--fh);font-size:20px}
+.sostac-desc h3{font-family:var(--fh);font-size:20px}
 .sostac-desc p{color:var(--muted);font-size:14px}
 .sostac .node circle.bg{fill:#0b1430;stroke:rgba(120,170,255,.3);stroke-width:1.5;transition:all .4s}
 .sostac .node text{font-family:var(--fh);font-weight:700;fill:#9fb4d8;transition:fill .4s}
@@ -274,6 +280,7 @@ section{position:relative;z-index:1;padding:120px 0}
 .g-axis b{font-weight:400}
 .g-axis{display:grid;grid-template-columns:repeat(11,1fr);margin-left:190px;font-family:var(--fm);font-size:11.5px;color:var(--dim);border-bottom:1px solid var(--line);padding-bottom:8px}
 .g-row{display:grid;grid-template-columns:190px 1fr;align-items:center;height:44px;cursor:pointer;border-radius:10px;transition:background .25s}
+button.g-row{appearance:none;width:100%;margin:0;background:transparent;border:0;color:inherit;font:inherit;text-align:left;padding:0}
 .g-row:hover,.g-row.active{background:rgba(59,130,246,.07)}
 .g-row .gl{font-size:13px;color:#c3cfe4;padding-left:10px;line-height:1.2}
 .g-row .gl small{display:block;color:var(--dim);font-size:11.5px}
@@ -437,7 +444,7 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
   .logo{font-size:14px;gap:8px}
   .logo-mark{width:32px;height:32px;font-size:13px}
   .nav-tools{gap:6px}
-  .lang-switch a{padding:6px 7px;min-width:28px}
+  .lang-switch a{padding:8px 9px;min-width:32px;min-height:28px}
 }
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
@@ -452,6 +459,7 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
 </style>
 </head>
 <body>
+<a class="skip" href="#top">Skip to content</a>
 <div class="progress" id="progress"></div>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <defs>
@@ -478,14 +486,14 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
 
 <header class="nav" id="nav">
   <div class="wrap">
-    <a href="#top" class="logo" aria-label="Home"><span class="logo-mark">FR</span><span>Filippe Revigat</span></a>
+    <a href="#top" class="logo"><span class="logo-mark">FR</span><span>Filippe Revigat</span></a>
     <nav class="nav-links" id="navLinks">
       <a href="#sobre">About</a><a href="#numeros">Results</a><a href="#competencias">Skills</a><a href="#ia">AI Systems</a><a href="#trajetoria">Experience</a><a href="#produto">Product</a><a href="#contato">Contact</a>
     </nav>
     <div class="nav-tools">
       <nav class="lang-switch" aria-label="Language">
-        <a href="/" hreflang="pt-BR" lang="pt-BR" aria-label="Português">PT</a>
-        <a href="/en/" hreflang="en" lang="en" aria-current="page" aria-label="English">EN</a>
+        <a href="/" hreflang="pt-BR" lang="pt-BR" aria-label="PT, Português">PT</a>
+        <a href="/en/" hreflang="en" lang="en" aria-current="page" aria-label="EN, English">EN</a>
       </nav>
       <a class="nav-cta" href="mailto:revigat@gmail.com">Let's talk</a>
       <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
@@ -506,15 +514,15 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
           <div class="av-ring3" aria-hidden="true"></div>
           <div class="av-ring2" aria-hidden="true"></div>
           <div class="av-ring" aria-hidden="true"></div>
-          <div class="av-photo"><video id="avVideo" muted loop playsinline preload="none" poster="../assets/filippe.webp" width="480" height="480" aria-label="Video of Filippe Revigat"><source src="../assets/filippe-sm.webm" type="video/webm" media="(max-width: 640px)"><source src="../assets/filippe-sm.mp4" type="video/mp4" media="(max-width: 640px)"><source src="../assets/filippe.webm" type="video/webm"><source src="../assets/filippe.mp4" type="video/mp4"><img src="../assets/filippe.webp" alt="Photo of Filippe Revigat" width="480" height="480"></video></div>
+          <div class="av-photo"><video id="avVideo" muted loop playsinline preload="none" poster="../assets/filippe.webp" width="480" height="480" aria-label="Video of Filippe Revigat"><source src="../assets/filippe-sm.webm" type="video/webm"><source src="../assets/filippe-sm.mp4" type="video/mp4"><img src="../assets/filippe.webp" alt="Photo of Filippe Revigat" width="480" height="480"></video></div>
         </div>
       </div>
       <p class="title">Specialist in Digital Marketing, Growth &amp; Performance | AI applied to business</p>
       <p class="typing" aria-live="polite"><span class="pre">&gt; focus:</span> <span class="tw" id="typed"></span><span class="caret"></span></p>
       <div class="ctas">
         <a class="btn btn-primary btn-lead" href="/departamento-marketing/en/"><svg><use href="#i-bot"/></svg>AI agent skills</a>
-        <a class="btn btn-primary btn-lead" href="#auditor"><svg><use href="#i-audit"/></svg>Site Auditor</a>
-        <a class="btn btn-primary" href="https://www.linkedin.com/in/filippe-revigat" target="_blank" rel="noopener"><svg><use href="#i-in"/></svg>LinkedIn</a>
+        <a class="btn btn-primary btn-lead" href="/auditor-de-sites/en/"><svg><use href="#i-audit"/></svg>Site Auditor</a>
+        <a class="btn btn-ghost" href="https://www.linkedin.com/in/filippe-revigat" target="_blank" rel="noopener"><svg><use href="#i-in"/></svg>LinkedIn</a>
         <a class="btn btn-ghost" href="mailto:revigat@gmail.com"><svg><use href="#i-mail"/></svg>revigat@gmail.com</a>
       </div>
       <div class="hero-meta">
@@ -554,7 +562,7 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
           <circle id="sostacArc" cx="200" cy="190" r="130" fill="none" stroke="url(#sg)" stroke-width="3" stroke-linecap="round" transform="rotate(-90 200 190)" stroke-dasharray="816.8" stroke-dashoffset="816.8" filter="url(#glow)"/>
           <circle cx="200" cy="190" r="62" fill="#08112a" stroke="rgba(120,170,255,.25)"/>
           <text x="200" y="184" text-anchor="middle" font-family="Space Grotesk, sans-serif" font-weight="700" font-size="22" fill="#e6edf8">SOSTAC</text>
-          <text x="200" y="206" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="10.5" fill="#22d3ee" id="sostacStep">continuous cycle</text>
+          <text x="200" y="206" text-anchor="middle" font-family="ui-monospace, monospace" font-size="10.5" fill="#22d3ee" id="sostacStep">continuous cycle</text>
           <g id="sostacNodes"></g>
         </svg>
         <div class="sostac-desc" id="sostacDesc"></div>
@@ -697,7 +705,7 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
           <circle cx="320" cy="210" r="58" fill="#0a1736" stroke="#22d3ee" stroke-width="2" filter="url(#glow2)"/>
           <g transform="translate(302 164)" fill="none" stroke="#22d3ee" stroke-width="2" stroke-linecap="round"><rect x="4" y="8" width="28" height="18" rx="5"/><path d="M18 2v6"/><circle cx="12" cy="17" r="1.6" fill="#22d3ee"/><circle cx="24" cy="17" r="1.6" fill="#22d3ee"/></g>
           <text x="320" y="220" text-anchor="middle" font-family="Space Grotesk, sans-serif" font-weight="700" font-size="17" fill="#fff">Henrique</text>
-          <text x="320" y="238" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="10.5" fill="#5eead4">AI · 24/7</text>
+          <text x="320" y="238" text-anchor="middle" font-family="ui-monospace, monospace" font-size="10.5" fill="#5eead4">AI · 24/7</text>
           <g class="dg-node"><rect x="470" y="40" width="150" height="80" rx="14"/><text x="545" y="72" text-anchor="middle">Schedule</text><text class="sm" x="545" y="93" text-anchor="middle">bookings, reminders</text><text class="sm" x="545" y="108" text-anchor="middle">and confirmations</text></g>
           <g class="dg-node"><rect x="470" y="170" width="150" height="80" rx="14"/><text x="545" y="202" text-anchor="middle">CRM</text><text class="sm" x="545" y="223" text-anchor="middle">updated</text><text class="sm" x="545" y="238" text-anchor="middle">automatically</text></g>
           <g class="dg-node"><rect x="470" y="300" width="150" height="80" rx="14"/><text x="545" y="335" text-anchor="middle">Leadership</text><text class="sm" x="545" y="356" text-anchor="middle">notifications</text></g>
@@ -720,7 +728,7 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
           <circle cx="180" cy="201" r="54" fill="#0a1736" stroke="#22d3ee" stroke-width="2" filter="url(#glow2)"/>
           <g transform="translate(162 157)" fill="none" stroke="#22d3ee" stroke-width="2" stroke-linecap="round"><rect x="4" y="8" width="28" height="18" rx="5"/><path d="M18 2v6"/><circle cx="12" cy="17" r="1.6" fill="#22d3ee"/><circle cx="24" cy="17" r="1.6" fill="#22d3ee"/></g>
           <text x="180" y="212" text-anchor="middle" font-family="Space Grotesk, sans-serif" font-weight="700" font-size="17" fill="#fff">Henrique</text>
-          <text x="180" y="230" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="10.5" fill="#5eead4">AI · 24/7</text>
+          <text x="180" y="230" text-anchor="middle" font-family="ui-monospace, monospace" font-size="10.5" fill="#5eead4">AI · 24/7</text>
           <g class="dg-node"><rect x="6" y="330" width="112" height="96" rx="14"/><text x="62" y="360" text-anchor="middle">Schedule</text><text class="sm" x="62" y="381" text-anchor="middle">bookings,</text><text class="sm" x="62" y="396" text-anchor="middle">reminders and</text><text class="sm" x="62" y="411" text-anchor="middle">confirmations</text></g>
           <g class="dg-node"><rect x="124" y="330" width="112" height="96" rx="14"/><text x="180" y="360" text-anchor="middle">CRM</text><text class="sm" x="180" y="381" text-anchor="middle">updated</text><text class="sm" x="180" y="396" text-anchor="middle">automatically</text></g>
           <g class="dg-node"><rect x="242" y="330" width="112" height="96" rx="14"/><text x="298" y="360" text-anchor="middle">Leadership</text><text class="sm" x="298" y="381" text-anchor="middle">notifications</text></g>
@@ -744,7 +752,7 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
         <svg class="ill" viewBox="-12 0 324 150" aria-hidden="true">
           <path d="M150 14 L205 34 V76 C205 106 182 128 150 138 C118 128 95 106 95 76 V34 Z" fill="rgba(59,130,246,.10)" stroke="#3b82f6" stroke-width="2"/>
           <path class="shield-check" d="M126 76 L144 94 L176 60" fill="none" stroke="#22d3ee" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
-          <g font-family="JetBrains Mono, monospace" font-size="10.5" fill="#8ea0c2">
+          <g font-family="ui-monospace, monospace" font-size="10.5" fill="#8ea0c2">
             <text x="82" y="40" text-anchor="end">security</text><text x="82" y="110" text-anchor="end">governance</text><text x="220" y="40">data</text><text x="220" y="110">practices</text>
           </g>
           <circle class="blinkdot" cx="89" cy="36" r="3" fill="#2dd4bf"/><circle class="blinkdot" cx="212" cy="36" r="3" fill="#2dd4bf"/><circle class="blinkdot" cx="89" cy="106" r="3" fill="#2dd4bf"/><circle class="blinkdot" cx="212" cy="106" r="3" fill="#2dd4bf"/>
@@ -760,7 +768,7 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
           <path class="flow flow-base" d="M114 75 H176"/><path class="flow flow-anim" d="M114 75 H176"/>
           <rect x="176" y="22" width="108" height="106" rx="12" fill="#0b1533" stroke="rgba(34,211,238,.5)"/>
           <g class="eq" fill="url(#fg)"><rect x="196" y="58" width="12" height="54" rx="3"/><rect x="214" y="58" width="12" height="54" rx="3" style="animation-delay:.3s"/><rect x="232" y="58" width="12" height="54" rx="3" style="animation-delay:.6s"/><rect x="250" y="58" width="12" height="54" rx="3" style="animation-delay:.9s"/></g>
-          <text x="230" y="44" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="10" fill="#8ea0c2">paid traffic</text>
+          <text x="230" y="44" text-anchor="middle" font-family="ui-monospace, monospace" font-size="10" fill="#8ea0c2">paid traffic</text>
         </svg>
         <h4>Paid traffic automation</h4>
         <p>The OpenAI and xAI ecosystem, and AI models, used to automate paid traffic work.</p>
@@ -895,8 +903,6 @@ small.addEventListener('change',()=>{if(!RM&&!small.matches)loop()});
 
 /* AVATAR VIDEO */
 (function(){const v=document.getElementById('avVideo');if(!v)return;v.muted=true;
-  const useSmall=small.matches;
-  v.querySelectorAll('source').forEach(s=>{if(s.hasAttribute('media')!==useSmall)s.remove()});
   if(RM){v.removeAttribute('autoplay');v.pause();return}
   const play=()=>{const p=v.play();if(p&&p.catch)p.catch(()=>{})};
   new IntersectionObserver(e=>{e[0].isIntersecting?play():v.pause()}).observe(v);
@@ -914,7 +920,7 @@ small.addEventListener('change',()=>{if(!RM&&!small.matches)loop()});
       if(y>h&&Math.random()>.96)drops[i]=0;drops[i]+=.8+Math.random()*.3}}
   size();
   let rainGen=0;
-  function rain(){const gen=++rainGen;if(RM||small.matches){for(let k=0;k<40;k++)frame();return}
+  function rain(){const gen=++rainGen;if(RM||small.matches){for(let k=0;k<10;k++)frame();return}
     let last=0;(function tick(t){if(gen!==rainGen||RM||small.matches)return;if(heroVisible&&!document.hidden&&t-last>55){frame();last=t}requestAnimationFrame(tick)})(0)}
   rain();
   small.addEventListener('change',()=>{size();rain()});
@@ -925,28 +931,39 @@ small.addEventListener('change',()=>{if(!RM&&!small.matches)loop()});
 function countUp(el){const to=+el.dataset.to;if(RM){el.textContent=to;return}const dur=1800,t0=performance.now();
   (function f(t){const k=Math.min(1,Math.max(0,(t-t0)/dur)),e=1-Math.pow(1-k,4);el.textContent=Math.round(to*e);if(k<1)requestAnimationFrame(f)})(t0)}
 
-/* SOSTAC */
-const sostac=[['S','Situation','Where we are: a diagnosis of market, audience, channels, and data.'],['O','Objectives','Where we want to go: clear, measurable goals.'],['S','Strategy','How we get there: positioning, audience, and channels.'],['T','Tactics','The tools: paid media, SEO, content, CRM, and AI.'],['A','Action','Execution: who does what, when, and how.'],['C','Control','Ongoing measurement: KPIs, tests, and optimization.']];
-if(matchMedia('(max-width:640px)').matches)document.getElementById('sostacSvg').setAttribute('viewBox','-46 0 492 380');
-const sg=document.getElementById('sostacNodes'),CX=200,CY=190,R=130;
-sostac.forEach((s,i)=>{const a=-Math.PI/2+i*Math.PI/3,x=CX+R*Math.cos(a),y=CY+R*Math.sin(a);
-  const g=document.createElementNS(NS,'g');g.setAttribute('class','node');
-  g.innerHTML=`<circle class="bg" cx="${x}" cy="${y}" r="27"/><text x="${x}" y="${y+8}" text-anchor="middle" font-size="22">${s[0]}</text>`;
-  const t=document.createElementNS(NS,'text');let lx,ly,anc;
-  if(i===0){lx=x;ly=y-38;anc='middle'}else if(i===3){lx=x;ly=y+50;anc='middle'}else{const right=Math.cos(a)>0;lx=x+(right?36:-36);ly=y+4;anc=right?'start':'end'}
-  t.setAttribute('class','slbl');t.setAttribute('x',lx);t.setAttribute('y',ly);t.setAttribute('text-anchor',anc);t.setAttribute('font-family','JetBrains Mono, monospace');t.setAttribute('font-size','12');t.setAttribute('fill','#8ea0c2');t.textContent=s[1].toLowerCase();
-  sg.appendChild(g);sg.appendChild(t);
-  const pick=()=>{setS(i);stopS=true};g.addEventListener('click',pick);g.addEventListener('mouseenter',pick);
-});
-const arc=document.getElementById('sostacArc'),desc=document.getElementById('sostacDesc'),stepT=document.getElementById('sostacStep');
-let si=0,stopS=false;
-function setS(i){si=i;sg.querySelectorAll('.node').forEach((n,k)=>n.classList.toggle('on',k<=i));
-  arc.style.transition=RM?'none':'stroke-dashoffset .9s cubic-bezier(.2,.7,.2,1)';arc.style.strokeDashoffset=816.8*(1-(i+1)/6);
-  desc.innerHTML=`<h4 class="grad-text">${sostac[i][1]}</h4><p>${sostac[i][2]}</p>`;stepT.textContent=`step ${i+1} of 6`}
-setS(0);
-if(!RM){setInterval(()=>{if(!stopS)setS((si+1)%6)},2200)}
-else{setS(5);desc.innerHTML=`<h4 class="grad-text">Planning in a continuous cycle</h4><p>Situation, Objectives, Strategy, Tactics, Action, and Control.</p>`;stepT.textContent='continuous cycle'}
-document.getElementById('sostacSvg').addEventListener('mouseleave',()=>{stopS=false});
+function lazyInit(el, fn){
+  if(!el) return;
+  if(!('IntersectionObserver' in window)){fn();return}
+  const io=new IntersectionObserver(es=>{if(es.some(e=>e.isIntersecting)){io.disconnect();fn()}},{rootMargin:'400px'});
+  io.observe(el);
+}
+function initSostac(){
+  /* SOSTAC */
+  const sostac=[['S','Situation','Where we are: a diagnosis of market, audience, channels, and data.'],['O','Objectives','Where we want to go: clear, measurable goals.'],['S','Strategy','How we get there: positioning, audience, and channels.'],['T','Tactics','The tools: paid media, SEO, content, CRM, and AI.'],['A','Action','Execution: who does what, when, and how.'],['C','Control','Ongoing measurement: KPIs, tests, and optimization.']];
+  if(matchMedia('(max-width:640px)').matches)document.getElementById('sostacSvg').setAttribute('viewBox','-46 0 492 380');
+  const sg=document.getElementById('sostacNodes'),CX=200,CY=190,R=130;
+  sostac.forEach((s,i)=>{const a=-Math.PI/2+i*Math.PI/3,x=CX+R*Math.cos(a),y=CY+R*Math.sin(a);
+    const g=document.createElementNS(NS,'g');g.setAttribute('class','node');
+    g.innerHTML=`<circle class="bg" cx="${x}" cy="${y}" r="27"/><text x="${x}" y="${y+8}" text-anchor="middle" font-size="22">${s[0]}</text>`;
+    const t=document.createElementNS(NS,'text');let lx,ly,anc;
+    if(i===0){lx=x;ly=y-38;anc='middle'}else if(i===3){lx=x;ly=y+50;anc='middle'}else{const right=Math.cos(a)>0;lx=x+(right?36:-36);ly=y+4;anc=right?'start':'end'}
+    t.setAttribute('class','slbl');t.setAttribute('x',lx);t.setAttribute('y',ly);t.setAttribute('text-anchor',anc);t.setAttribute('font-family','ui-monospace, monospace');t.setAttribute('font-size','12');t.setAttribute('fill','#8ea0c2');t.textContent=s[1].toLowerCase();
+    sg.appendChild(g);sg.appendChild(t);
+    g.setAttribute('role','button');g.setAttribute('tabindex','0');g.setAttribute('aria-label',s[1]);
+    const pick=()=>{setS(i);stopS=true};g.addEventListener('click',pick);g.addEventListener('mouseenter',pick);g.addEventListener('keydown',ev=>{if(ev.key==='Enter'||ev.key===' '){ev.preventDefault();pick()}});
+  });
+  const arc=document.getElementById('sostacArc'),desc=document.getElementById('sostacDesc'),stepT=document.getElementById('sostacStep');
+  let si=0,stopS=false;
+  function setS(i){si=i;sg.querySelectorAll('.node').forEach((n,k)=>n.classList.toggle('on',k<=i));
+    arc.style.transition=RM?'none':'stroke-dashoffset .9s cubic-bezier(.2,.7,.2,1)';arc.style.strokeDashoffset=816.8*(1-(i+1)/6);
+    desc.innerHTML=`<h3 class="grad-text">${sostac[i][1]}</h3><p>${sostac[i][2]}</p>`;stepT.textContent=`step ${i+1} of 6`}
+  setS(0);
+  if(!RM){setInterval(()=>{if(!stopS)setS((si+1)%6)},2200)}
+  else{setS(5);desc.innerHTML=`<h3 class="grad-text">Planning in a continuous cycle</h3><p>Situation, Objectives, Strategy, Tactics, Action, and Control.</p>`;stepT.textContent='continuous cycle'}
+  document.getElementById('sostacSvg').addEventListener('mouseleave',()=>{stopS=false});
+}
+lazyInit(document.getElementById('sobre'), initSostac);
+
 
 /* JOBS (from CV) */
 const jobs=[
@@ -972,42 +989,73 @@ jobs.forEach(j=>{j.a=mi(j.s);j.z=mi(j.e||NOW)+1;j.m=j.z-j.a});
 const maxM=Math.max(...jobs.map(j=>j.m));
 const monthSet=new Set();jobs.forEach(j=>{for(let k=j.a;k<j.z;k++)monthSet.add(k)});
 const totalM=monthSet.size;
-const lines=[[-14,'80px','.75s','0s'],[13,'120px','.6s','.2s'],[-21,'50px','.9s','.45s'],[18,'90px','.7s','.1s'],[-16,'140px','.55s','.6s'],[24,'60px','.8s','.35s'],[-26,'100px','.65s','.8s'],[0,'160px','.7s','.5s']];
-const dust=[[-170,-12,'.7s','0s'],[-220,12,'.8s','.25s'],[-140,15,'.6s','.5s'],[-260,-15,'.9s','.15s'],[-190,-19,'.65s','.4s'],[-240,19,'.85s','.7s'],[-160,-11,'.75s','.55s'],[-210,11,'.7s','.85s']];
-const totalRow=`<div class="bar-row total"><div class="nm">Total experience<small>Full track record, at full speed</small></div><div class="bar-track"><div class="bar-fill" id="totalFill" data-w="94"><span class="trail"><span class="tail"></span><span class="tail2"></span>${lines.map(l=>`<b class="sl" style="--t:${l[0]}px;--w:${l[1]};--d:${l[2]};--dl:${l[3]}"></b>`).join('')}${dust.map(d=>`<i style="--x:${d[0]}px;--y:${d[1]}px;--d:${d[2]};--dl:${d[3]}"></i>`).join('')}</span><span class="spark"><span class="halo"></span><span class="starw"><span class="star"></span><span class="star s2"></span></span><span class="core"></span></span></div></div><div class="val">${totalM} months</div></div>`;
-document.getElementById('bars').innerHTML=totalRow+jobs.map((j,i)=>`<div class="bar-row"><div class="nm">${j.co}<small>${j.role}${j.type?' ('+j.type+')':''}</small></div><div class="bar-track"><div class="bar-fill${j.co.includes('Med4U')?' v':''}" data-w="${(j.m/totalM*94).toFixed(1)}"></div></div><div class="val">${j.m} months</div></div>`).join('');
+function initBars(){
+  const lines=[[-14,'80px','.75s','0s'],[13,'120px','.6s','.2s'],[-21,'50px','.9s','.45s'],[18,'90px','.7s','.1s'],[-16,'140px','.55s','.6s'],[24,'60px','.8s','.35s'],[-26,'100px','.65s','.8s'],[0,'160px','.7s','.5s']];
+  const dust=[[-170,-12,'.7s','0s'],[-220,12,'.8s','.25s'],[-140,15,'.6s','.5s'],[-260,-15,'.9s','.15s'],[-190,-19,'.65s','.4s'],[-240,19,'.85s','.7s'],[-160,-11,'.75s','.55s'],[-210,11,'.7s','.85s']];
+  const totalRow=`<div class="bar-row total"><div class="nm">Total experience<small>Full track record, at full speed</small></div><div class="bar-track"><div class="bar-fill" id="totalFill" data-w="94"><span class="trail"><span class="tail"></span><span class="tail2"></span>${lines.map(l=>`<b class="sl" style="--t:${l[0]}px;--w:${l[1]};--d:${l[2]};--dl:${l[3]}"></b>`).join('')}${dust.map(d=>`<i style="--x:${d[0]}px;--y:${d[1]}px;--d:${d[2]};--dl:${d[3]}"></i>`).join('')}</span><span class="spark"><span class="halo"></span><span class="starw"><span class="star"></span><span class="star s2"></span></span><span class="core"></span></span></div></div><div class="val">${totalM} months</div></div>`;
+  document.getElementById('bars').innerHTML=totalRow+jobs.map((j,i)=>`<div class="bar-row"><div class="nm">${j.co}<small>${j.role}${j.type?' ('+j.type+')':''}</small></div><div class="bar-track"><div class="bar-fill${j.co.includes('Med4U')?' v':''}" data-w="${(j.m/totalM*94).toFixed(1)}"></div></div><div class="val">${j.m} months</div></div>`).join('');
+    const viz=document.getElementById('monthsViz');
+    if(viz&&viz.classList.contains('in')){viz.querySelectorAll('.bar-fill').forEach(b=>{if(b.dataset.w)b.style.width=b.dataset.w+'%'});const tf=document.getElementById('totalFill');if(tf&&!tf.classList.contains('go')&&!tf.classList.contains('lit')){if(RM)tf.classList.add('lit');else{tf.classList.add('go');setTimeout(()=>tf.classList.add('lit'),2050)}}}
+}
+lazyInit(document.getElementById('numeros'), initBars);
 
-/* ORBIT */
-const og=document.getElementById('orbitG'),ol=document.getElementById('orbitLines');
-const rings=[{r:90,a0:0,items:['Google Ads','Meta Ads','TikTok Ads','ChatGPT Ads'],col:'#3b82f6',cls:''},{r:150,a0:30,items:['GA4','GTM','Power BI','SQL','Zoho Analytics','Semrush'],col:'#22d3ee',cls:'r2'},{r:210,a0:-64.3,items:['n8n','OpenAI','xAI','Cursor','Grok Bot','AI agents','CRM'],col:'#8b5cf6',cls:'r3'}];
-rings.forEach((R,ri)=>{
-  const d=document.createElementNS(NS,'g');d.setAttribute('class','rot '+R.cls);
-  d.innerHTML=`<circle cx="${300+R.r}" cy="230" r="4" fill="${R.col}" filter="url(#glow)"/><circle cx="${300-R.r}" cy="230" r="3" fill="${R.col}" opacity=".7"/>`;og.appendChild(d);
-  R.items.forEach((t,i)=>{const a=(R.a0+i*360/R.items.length)*Math.PI/180,x=300+R.r*Math.cos(a),y=230+R.r*Math.sin(a),w=t.length*6.7+18;
-    const ln=document.createElementNS(NS,'path');ln.setAttribute('d',`M300 230 L${x.toFixed(1)} ${y.toFixed(1)}`);ln.setAttribute('class','flow flow-anim');ln.style.strokeWidth='1';ln.style.opacity='.35';ln.style.animationDelay=(-(ri*.4+i*.2))+'s';ol.appendChild(ln);
-    const n=document.createElementNS(NS,'g');n.setAttribute('class','orb-chip');n.style.animationDelay=(ri*.6+i*.35)+'s';
-    n.innerHTML=`<rect x="${x-w/2}" y="${y-12}" width="${w}" height="24" rx="12" fill="#0b1533" stroke="${R.col}" stroke-opacity=".85"/><text x="${x}" y="${y+4}" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="10.5" fill="#dbe7ff">${t}</text>`;og.appendChild(n)});
-});
 
-/* MARQUEE */
-const tools=['Google Ads','Meta Ads','TikTok Ads','ChatGPT Ads','GA4','Google Tag Manager','Power BI','Zoho Analytics','SQL','Excel','Semrush','Yandex Metrica','Tableau','n8n','OpenAI','xAI (Grok)','Cursor','Grok Bot','CRM','A/B tests','SEO','CRO','SOSTAC'];
-document.getElementById('marquee').innerHTML=[...tools,...tools].map(t=>`<span class="tool">${t}</span>`).join('');
 
-/* GANTT + TIMELINE */
-const gi=document.getElementById('ganttInner'),total=11*12;
-let gh='<div class="g-axis">'+Array.from({length:11},(_,i)=>`<span><b class="yl">20</b>${16+i}</span>`).join('')+'</div>';
-jobs.forEach((j,i)=>{gh+=`<div class="g-row" data-i="${i}"><div class="gl">${j.co}<small>${j.per}</small></div><div class="g-track"><div class="g-bar${j.co.includes('Med4U')?' v':''}${j.now?' now':''}" style="left:${(j.a/total*100).toFixed(2)}%;width:${(j.m/total*100).toFixed(2)}%;transition-delay:${(.15*(jobs.length-i)).toFixed(2)}s"></div></div></div>`});
-gi.innerHTML=gh;
-const list=document.getElementById('tlList'),det=document.getElementById('tlDetail');
-list.innerHTML=jobs.map((j,i)=>`<button class="tl-item" role="tab" data-i="${i}"><span class="r">${j.role}${j.type?' ('+j.type+')':''}</span><span class="co">${j.co}</span><span class="pd">${j.per}</span></button>`).join('');
-function show(i){const j=jobs[i];
-  list.querySelectorAll('.tl-item').forEach((b,k)=>{b.classList.toggle('active',k===i);b.setAttribute('aria-selected',k===i)});
-  gi.querySelectorAll('.g-row').forEach((r,k)=>r.classList.toggle('active',k===i));
-  det.innerHTML=`<span class="pd">${j.per} · ${j.m} months${j.type?' · '+j.type:''}</span><h3>${j.role}</h3><div class="co">${j.co}</div><div class="tags">${j.tags.map(t=>`<span class="chip t">${t}</span>`).join('')}</div><ul>${j.b.map((b,k)=>`<li style="animation-delay:${(k*.07).toFixed(2)}s">${b}</li>`).join('')}</ul>`;}
-list.addEventListener('click',e=>{const b=e.target.closest('.tl-item');if(b)show(+b.dataset.i)});
-gi.addEventListener('click',e=>{const r=e.target.closest('.g-row');if(!r)return;const i=+r.dataset.i;show(i);
-  if(innerWidth<1025){const b=list.children[i];list.scrollTo({left:b.offsetLeft-list.offsetLeft,behavior:RM?'auto':'smooth'})}});
-show(0);
+function initOrbit(){
+  /* ORBIT */
+  const og=document.getElementById('orbitG'),ol=document.getElementById('orbitLines');
+  const rings=[{r:90,a0:0,items:['Google Ads','Meta Ads','TikTok Ads','ChatGPT Ads'],col:'#3b82f6',cls:''},{r:150,a0:30,items:['GA4','GTM','Power BI','SQL','Zoho Analytics','Semrush'],col:'#22d3ee',cls:'r2'},{r:210,a0:-64.3,items:['n8n','OpenAI','xAI','Cursor','Grok Bot','AI agents','CRM'],col:'#8b5cf6',cls:'r3'}];
+  rings.forEach((R,ri)=>{
+    const d=document.createElementNS(NS,'g');d.setAttribute('class','rot '+R.cls);
+    d.innerHTML=`<circle cx="${300+R.r}" cy="230" r="4" fill="${R.col}" filter="url(#glow)"/><circle cx="${300-R.r}" cy="230" r="3" fill="${R.col}" opacity=".7"/>`;og.appendChild(d);
+    R.items.forEach((t,i)=>{const a=(R.a0+i*360/R.items.length)*Math.PI/180,x=300+R.r*Math.cos(a),y=230+R.r*Math.sin(a),w=t.length*6.7+18;
+      const ln=document.createElementNS(NS,'path');ln.setAttribute('d',`M300 230 L${x.toFixed(1)} ${y.toFixed(1)}`);ln.setAttribute('class','flow flow-anim');ln.style.strokeWidth='1';ln.style.opacity='.35';ln.style.animationDelay=(-(ri*.4+i*.2))+'s';ol.appendChild(ln);
+      const n=document.createElementNS(NS,'g');n.setAttribute('class','orb-chip');n.style.animationDelay=(ri*.6+i*.35)+'s';
+      n.innerHTML=`<rect x="${x-w/2}" y="${y-12}" width="${w}" height="24" rx="12" fill="#0b1533" stroke="${R.col}" stroke-opacity=".85"/><text x="${x}" y="${y+4}" text-anchor="middle" font-family="ui-monospace, monospace" font-size="10.5" fill="#dbe7ff">${t}</text>`;og.appendChild(n)});
+  });
+}
+lazyInit(document.getElementById('competencias'), initOrbit);
+
+
+function initMarquee(){
+  /* MARQUEE */
+  const tools=['Google Ads','Meta Ads','TikTok Ads','ChatGPT Ads','GA4','Google Tag Manager','Power BI','Zoho Analytics','SQL','Excel','Semrush','Yandex Metrica','Tableau','n8n','OpenAI','xAI (Grok)','Cursor','Grok Bot','CRM','A/B tests','SEO','CRO','SOSTAC'];
+  document.getElementById('marquee').innerHTML=[...tools,...tools].map(t=>`<span class="tool">${t}</span>`).join('');
+}
+lazyInit(document.getElementById('competencias'), initMarquee);
+
+
+function initTimeline(){
+  /* GANTT + TIMELINE */
+  const gi=document.getElementById('ganttInner'),total=11*12;
+  let gh='<div class="g-axis">'+Array.from({length:11},(_,i)=>`<span><b class="yl">20</b>${16+i}</span>`).join('')+'</div>';
+  jobs.forEach((j,i)=>{gh+=`<button type="button" class="g-row" data-i="${i}" aria-pressed="false"><span class="gl">${j.co}<small>${j.per}</small></span><span class="g-track"><span class="g-bar${j.co.includes('Med4U')?' v':''}${j.now?' now':''}" style="left:${(j.a/total*100).toFixed(2)}%;width:${(j.m/total*100).toFixed(2)}%;transition-delay:${(.15*(jobs.length-i)).toFixed(2)}s"></span></span></button>`});
+  gi.innerHTML=gh;
+  const list=document.getElementById('tlList'),det=document.getElementById('tlDetail');
+  list.innerHTML=jobs.map((j,i)=>`<button class="tl-item" role="tab" aria-controls="tlDetail" data-i="${i}"><span class="r">${j.role}${j.type?' ('+j.type+')':''}</span><span class="co">${j.co}</span><span class="pd">${j.per}</span></button>`).join('');
+  function show(i){const j=jobs[i];
+    list.querySelectorAll('.tl-item').forEach((b,k)=>{b.classList.toggle('active',k===i);b.setAttribute('aria-selected',k===i)});
+    gi.querySelectorAll('.g-row').forEach((r,k)=>{r.classList.toggle('active',k===i);r.setAttribute('aria-pressed',k===i?'true':'false')});
+    det.innerHTML=`<span class="pd">${j.per} · ${j.m} months${j.type?' · '+j.type:''}</span><h3>${j.role}</h3><div class="co">${j.co}</div><div class="tags">${j.tags.map(t=>`<span class="chip t">${t}</span>`).join('')}</div><ul>${j.b.map((b,k)=>`<li style="animation-delay:${(k*.07).toFixed(2)}s">${b}</li>`).join('')}</ul>`;}
+  list.addEventListener('click',e=>{const b=e.target.closest('.tl-item');if(b)show(+b.dataset.i)});
+  gi.addEventListener('click',e=>{const r=e.target.closest('.g-row');if(!r)return;const i=+r.dataset.i;show(i);
+    if(innerWidth<1025){const b=list.children[i];list.scrollTo({left:b.offsetLeft-list.offsetLeft,behavior:RM?'auto':'smooth'})}});
+  list.addEventListener('keydown',e=>{
+    const items=[...list.querySelectorAll('.tl-item')];
+    const i=items.indexOf(document.activeElement);
+    if(i<0)return;
+    let n=i;
+    if(e.key==='ArrowDown'||e.key==='ArrowRight')n=(i+1)%items.length;
+    else if(e.key==='ArrowUp'||e.key==='ArrowLeft')n=(i-1+items.length)%items.length;
+    else if(e.key==='Home')n=0;
+    else if(e.key==='End')n=items.length-1;
+    else return;
+    e.preventDefault();items[n].focus();show(n);
+  });
+  show(0);
+}
+lazyInit(document.getElementById('trajetoria'), initTimeline);
+
 
 /* REVEAL */
 function activate(t){t.classList.add('in');t.querySelectorAll('.count').forEach(countUp);
