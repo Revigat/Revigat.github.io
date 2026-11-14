@@ -7,7 +7,8 @@ document.querySelectorAll("[data-cta]").forEach(el => {
 
 function isCheckout(url) {
   try {
-    return new URL(url, window.location.href).hostname === "pay.kiwify.com.br";
+    const host = new URL(url, window.location.href).hostname;
+    return host === "pay.kiwify.com.br" || host === "pay.kiwify.com";
   } catch (_) {
     return false;
   }
