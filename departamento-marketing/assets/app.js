@@ -338,6 +338,38 @@ document.querySelectorAll("[data-buy]").forEach(el => {
   el.setAttribute("href", BUY_URL);
 });
 
+/* AddToCart on checkout clicks. Same-tab navigations wait briefly so the pixel can send. */
+const CART_NAV_DELAY_MS = 300;
+function isCheckoutLink(el) {
+  if (!el || el.tagName !== "A") return false;
+  if (el.hasAttribute("data-buy")) return true;
+  try {
+    return new URL(el.href, window.location.href).hostname === "pay.kiwify.com.br";
+  } catch (_) {
+    return false;
+  }
+}
+function trackAddToCartAndGo(event) {
+  const el = event.currentTarget;
+  if (!isCheckoutLink(el)) return;
+  try {
+    if (typeof window.rdt === "function") window.rdt("track", "AddToCart");
+  } catch (_) {}
+  if (event.type !== "click") return;
+  if (event.defaultPrevented) return;
+  if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+  if (typeof event.button === "number" && event.button !== 0) return;
+  if (el.target && el.target !== "_self") return;
+  const href = el.href;
+  if (!href) return;
+  event.preventDefault();
+  window.setTimeout(() => { window.location.assign(href); }, CART_NAV_DELAY_MS);
+}
+document.querySelectorAll("a[data-buy], a[href*='pay.kiwify.com.br']").forEach(el => {
+  el.addEventListener("click", trackAddToCartAndGo);
+  el.addEventListener("auxclick", trackAddToCartAndGo);
+});
+
 const nav = document.getElementById("nav");
 const burger = document.getElementById("burger");
 const links = document.getElementById("navLinks");
