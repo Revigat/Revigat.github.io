@@ -1,0 +1,42 @@
+.pack{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.skill-card{padding:28px 26px 26px;display:flex;flex-direction:column;gap:12px;min-width:0}
+.skill-card.featured{grid-column:1 / -1;border-color:rgba(34,211,238,.45);box-shadow:0 0 0 1px rgba(34,211,238,.08),0 0 40px rgba(34,211,238,.08)}
+.skill-card h3{font-family:var(--fh);font-size:clamp(20px,2.2vw,26px);letter-spacing:-.02em;line-height:1.2;overflow-wrap:anywhere}
+.skill-card .sum{color:#c3cfe4;font-size:16px}
+.meta{list-style:none;display:grid;gap:8px}
+.meta li{display:grid;grid-template-columns:108px minmax(0,1fr);gap:10px;font-size:14.5px;color:#c3cfe4;min-width:0}
+.meta b{font-family:var(--fm);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--cyan);font-weight:500;padding-top:4px}
+.meta span{min-width:0;overflow-wrap:anywhere}
+.skill-card .ctas{margin-top:6px}
+.skill-card .note{font-size:13.5px;color:var(--dim);line-height:1.5}
+.skill-card .note a,.sources a,.fine a,.today a,.credits a{color:var(--cyan);text-decoration:underline;text-underline-offset:3px}
+.skill-card .note a:hover,.sources a:hover,.fine a:hover,.today a:hover,.credits a:hover{color:#fff}
+.sources{margin-top:18px;color:var(--muted);font-size:15px}
+.fine{margin-top:16px;color:var(--dim);font-size:14px;max-width:78ch;overflow-wrap:anywhere}
+.credits li,.today li{overflow-wrap:anywhere}
+.warn{padding:22px 24px;margin-bottom:20px;border-color:rgba(251,191,36,.4);background:rgba(40,28,10,.42)}
+.warn p{color:#f6e7c1;font-size:15.5px}
+.warn strong{color:#fff;font-weight:600}
+.today,.credits{list-style:none;counter-reset:n;display:grid;gap:12px;margin:0;padding:0}
+.today li,.credits li{counter-increment:n;padding:20px 22px 20px 76px}
+.today li::before,.credits li::before{content:counter(n) ")";position:absolute;left:22px;top:18px;font-family:var(--fm);font-size:18px;color:var(--cyan)}
+.today li{color:#c3cfe4;font-size:16.5px}
+.credits li{color:#c3cfe4;font-size:15px}
+.credits li b{color:var(--text);font-weight:600}
+.hero h1{font-size:clamp(30px,4.1vw,50px)}
+#alerta .inside .num{font-size:clamp(32px,3.4vw,46px)}
+#como .steps{grid-template-columns:repeat(3,1fr)}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+@media (max-width:1024px){
+  .pack{grid-template-columns:1fr 1fr}
+  #como .steps{grid-template-columns:1fr 1fr}
+}
+@media (max-width:640px){
+  .pack{grid-template-columns:1fr}
+  #como .steps{grid-template-columns:1fr}
+  .skill-card,.warn{padding:22px}
+  .meta li{grid-template-columns:1fr;gap:2px}
+  .today li,.credits li{padding:18px 16px 18px 58px}
+  .today li::before,.credits li::before{left:16px;top:16px}
+  .skill-card .ctas .btn{width:100%}
+}
